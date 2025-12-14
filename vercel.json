@@ -1,23 +1,9 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "api/**/*.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "docs/**",
-            "use": "@vercel/static"
+    "outputDirectory": "docs",
+    "functions": {
+        "api/*.js": {
+            "runtime": "@vercel/node@3"
         }
-    ],
-    "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "/api/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/docs/$1"
-        }
-    ]
+    }
 }
