@@ -722,7 +722,8 @@
                                 </td>
                                 <td><span class="tag-growth">Growth</span></td>
                                 <td><strong>Reply Guy Sprint:</strong> Reply to 10 tweets searching for
-                                    <code>"false positive" OR "snyk noise"</code>. Be helpful, not salesy.</td>
+                                    <code>"false positive" OR "snyk noise"</code>. Be helpful, not salesy.
+                                </td>
                                 <td><select class="assignee-select" id="assign-m15-1"></select></td>
                             </tr>
                             <tr id="task-m15-2">
@@ -840,7 +841,8 @@
                                 </td>
                                 <td><span class="tag-growth">Growth</span></td>
                                 <td><strong>Reply Sprint #2:</strong> 10 replies. Search: <code>"SAST slow"</code> or
-                                    <code>"security scanner"</code></td>
+                                    <code>"security scanner"</code>
+                                </td>
                                 <td><select class="assignee-select" id="assign-t16-4"></select></td>
                             </tr>
                         </tbody>
@@ -874,7 +876,8 @@
                                 </td>
                                 <td><span class="tag-growth">Growth</span></td>
                                 <td><strong>Competitor Stealth:</strong> Search <code>"CodeRabbit vs Snyk"</code> and
-                                    <code>"Aikido security"</code>. Reply pitch Precogs.</td>
+                                    <code>"Aikido security"</code>. Reply pitch Precogs.
+                                </td>
                                 <td><select class="assignee-select" id="assign-w17-1"></select></td>
                             </tr>
                             <tr id="task-w17-2">
@@ -932,7 +935,8 @@
                                 </td>
                                 <td><span class="tag-growth">Growth</span></td>
                                 <td><strong>Reply Sprint:</strong> 15 replies. Search:
-                                    <code>"code review" OR "pull request security"</code></td>
+                                    <code>"code review" OR "pull request security"</code>
+                                </td>
                                 <td><select class="assignee-select" id="assign-th18-1"></select></td>
                             </tr>
                             <tr id="task-th18-2">
@@ -1623,25 +1627,87 @@
             initAnalytics();
         }
 
-        function refreshData() {
-            // Simulate API refresh with random small changes
-            const history = JSON.parse(localStorage.getItem('precogs_analytics_history') || '[]');
-            const latestEntry = history.length > 0 ? history[history.length - 1] : null;
-            const data = latestEntry ? [...latestEntry.data] : [...INITIAL_DATA];
+        async function refreshData() {
+            const refreshBtn = document.querySelector('.refresh-btn');
+            const originalText = refreshBtn.innerText;
+            refreshBtn.innerText = '⏳ Fetching real data...';
+            refreshBtn.disabled = true;
 
-            data.forEach(comp => {
-                // Simulate small random changes (-50 to +150)
-                const change = Math.floor(Math.random() * 200) - 50;
-                comp.followers = Math.max(0, comp.followers + change);
-            });
+            try {
+                // Try to fetch real data from Vercel API
+                const API_URL = window.location.hostname === 'localhost'
+                    ? 'http://localhost:3000/api/twitter-stats'
+                    : '/api/twitter-stats';
 
-            // Update inputs
-            const inputs = document.querySelectorAll('#analyticsBody input.competitor-input');
-            inputs.forEach((input, idx) => {
-                input.value = data[idx].followers;
-            });
+                const response = await fetch(API_URL);
 
-            alert('🔄 Refreshed! (Simulated data - enter real numbers and Save)');
+                if (!response.ok) {
+                    throw new Error(`API returned ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.success && result.data) {
+                    // Map API data to our format
+                    const history = JSON.parse(localStorage.getItem('precogs_analytics_history') || '[]');
+                    const latestEntry = history.length > 0 ? history[history.length - 1] : null;
+                    const baseData = latestEntry ? [...latestEntry.data] : [...INITIAL_DATA];
+
+                    // Update followers from API
+                    result.data.forEach(apiItem => {
+                        const idx = baseData.findIndex(d =>
+                            d.handle.toLowerCase() === apiItem.handle.toLowerCase() ||
+                            d.name.toLowerCase() === apiItem.name.toLowerCase()
+                        );
+                        if (idx >= 0) {
+                            baseData[idx].followers = apiItem.followers;
+                            if (apiItem.description) {
+                                baseData[idx].description = apiItem.description;
+                            }
+                        }
+                    });
+
+                    // Update inputs in table
+                    const inputs = document.querySelectorAll('#analyticsBody input.competitor-input');
+                    inputs.forEach((input, idx) => {
+                        input.value = baseData[idx].followers;
+                    });
+
+                    refreshBtn.innerText = '✅ Live Data Loaded!';
+                    document.getElementById('lastUpdated').innerText =
+                        'Last updated: ' + new Date(result.fetchedAt).toLocaleString() + ' (LIVE)';
+
+                    // Auto-save the live data
+                    setTimeout(() => {
+                        saveAllAnalytics();
+                        refreshBtn.innerText = originalText;
+                        refreshBtn.disabled = false;
+                    }, 1000);
+
+                    return;
+                }
+            } catch (error) {
+                console.log('API not available, using fallback:', error.message);
+
+                // Fallback to simulated data if API not deployed
+                const history = JSON.parse(localStorage.getItem('precogs_analytics_history') || '[]');
+                const latestEntry = history.length > 0 ? history[history.length - 1] : null;
+                const data = latestEntry ? [...latestEntry.data] : [...INITIAL_DATA];
+
+                data.forEach(comp => {
+                    const change = Math.floor(Math.random() * 200) - 50;
+                    comp.followers = Math.max(0, comp.followers + change);
+                });
+
+                const inputs = document.querySelectorAll('#analyticsBody input.competitor-input');
+                inputs.forEach((input, idx) => {
+                    input.value = data[idx].followers;
+                });
+
+                refreshBtn.innerText = originalText;
+                refreshBtn.disabled = false;
+                alert('🔄 Using simulated data. Deploy to Vercel for live Twitter data!');
+            }
         }
 
         function renderPopularTweets(data) {
