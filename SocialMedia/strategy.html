@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Strategy | Precogs AI</title>
+    <meta name="description"
+        content="Precogs AI Social Media Strategy - Content calendar, growth playbook, and competitor analytics.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: #fafbfc;
+            --bg-white: #ffffff;
+            --bg-glass: rgba(255, 255, 255, 0.7);
+            --text-dark: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --accent-primary: #8b5cf6;
+            --accent-secondary: #a855f7;
+            --gradient-primary: linear-gradient(135deg, #8b5cf6, #a855f7, #d946ef);
+            --accent-glow: 0 0 30px rgba(139, 92, 246, 0.3);
+            --accent-glow-strong: 0 0 40px rgba(139, 92, 246, 0.5);
+            --border-light: rgba(0, 0, 0, 0.06);
+            --border-accent: rgba(139, 92, 246, 0.2);
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 8px 40px rgba(139, 92, 246, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 16px 24px;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .header-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .header-nav a:hover {
+            color: var(--accent-primary);
+        }
+
+        .cta-btn {
+            background: var(--gradient-primary);
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+            box-shadow: var(--accent-glow);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--accent-glow-strong);
+        }
+
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+        }
+
+        .page-meta {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .sub-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 30px;
+            background: var(--bg-white);
+            padding: 6px;
+            border-radius: 14px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+            overflow-x: auto;
+        }
+
+        .sub-tab-btn {
+            flex: 1;
+            padding: 12px 18px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            min-width: 140px;
+        }
+
+        .sub-tab-btn:hover {
+            background: rgba(139, 92, 246, 0.05);
+            color: var(--accent-primary);
+        }
+
+        .sub-tab-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--accent-glow);
+        }
+
+        .sub-tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .sub-tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 40px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 24px 0 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .highlight-card {
+            border-left: 4px solid var(--accent-primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h4 {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 24px 0;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: var(--bg-white);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+            color: var(--text-dark);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .data-table td {
+            color: var(--text-secondary);
+        }
+
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent-primary);
+            cursor: pointer;
+        }
+
+        .assignee-select {
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            background: white;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        .assignee-select:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1);
+        }
+
+        .completed-row {
+            background: #f0fdf4;
+            opacity: 0.7;
+        }
+
+        .completed-row td {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        .add-task-btn {
+            background: transparent;
+            color: var(--accent-primary);
+            border: 1px dashed var(--accent-primary);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .add-task-btn:hover {
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .chart-container {
+            height: 250px;
+            display: flex;
+            align-items: flex-end;
+            gap: 16px;
+            padding: 20px;
+            background: var(--bg-white);
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            margin-bottom: 24px;
+        }
+
+        .chart-bar-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            height: 100%;
+            justify-content: flex-end;
+        }
+
+        .chart-bar {
+            width: 100%;
+            background: var(--gradient-primary);
+            border-radius: 6px 6px 0 0;
+            transition: height 1s ease;
+            position: relative;
+            min-height: 4px;
+            opacity: 0.8;
+        }
+
+        .chart-bar:hover {
+            opacity: 1;
+        }
+
+        .chart-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .chart-value {
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .competitor-input {
+            width: 90px;
+            padding: 6px 10px;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .trend-up {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .trend-down {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        .trend-same {
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.1));
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .stat-card h1 {
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+            margin: 0;
+        }
+
+        .suggestion-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            border-radius: 12px;
+            margin: 12px 0;
+        }
+
+        .suggestion-box h4 {
+            color: #92400e;
+            margin-bottom: 8px;
+        }
+
+        .suggestion-box p {
+            color: #78350f;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .popular-tweet {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+
+        .popular-tweet .author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .popular-tweet .content {
+            margin: 8px 0;
+        }
+
+        .popular-tweet .stats {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .refresh-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .refresh-btn:hover {
+            background: #059669;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-left: 12px;
+        }
+
+        .site-footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 48px 24px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            background: var(--bg-white);
+        }
+
+        .site-footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .tag-growth {
+            background: #e0f2fe;
+            color: #0284c7;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tag-post {
+            background: #f3e8ff;
+            color: #9333ea;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tag-video {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sub-tabs {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="https://precogs.ai" class="logo-link">
+                <img src="precogs-logo.png" alt="Precogs AI" style="height: 36px; width: auto;">
+                <span>Precogs AI</span>
+            </a>
+            <nav class="header-nav">
+                <a href="../index.html">Docs</a>
+                <a href="../Blog/sql-injection.html">Blog</a>
+                <a href="https://precogs.ai" target="_blank" class="cta-btn">Try Free Scan →</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <header class="page-header">
+            <h1 class="page-title">📱 Social Media Headquarters</h1>
+            <p class="page-meta">Growth Engine • Content Calendar • Competitor Analytics</p>
+        </header>
+
+        <div class="sub-tabs">
+            <button class="sub-tab-btn active" onclick="switchSubTab(event, 'sm-analytics')">📈 Analytics
+                Dashboard</button>
+            <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-calendar')">📅 Content Calendar</button>
+            <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-growth')">🚀 Growth Playbook</button>
+            <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-blog')">✍️ Blog Engine</button>
+        </div>
+
+        <!-- Tab: Analytics Dashboard -->
+        <div id="sm-analytics" class="sub-tab-content active">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+                <div>
+                    <h2 style="margin:0;">📈 Competitor Intelligence</h2>
+                    <span class="last-updated" id="lastUpdated">Last updated: Never</span>
+                </div>
+                <div style="display: flex; gap: 12px;">
+                    <button class="refresh-btn" onclick="refreshData()">🔄 Refresh Data</button>
+                    <button class="cta-btn" onclick="saveAllAnalytics()">💾 Save Changes</button>
+                </div>
+            </div>
+
+            <div class="analytics-grid">
+                <div>
+                    <!-- Chart -->
+                    <div class="card">
+                        <h3 style="margin-top:0;">🏆 Share of Voice (Followers)</h3>
+                        <div class="chart-container" id="followersChart"></div>
+                    </div>
+
+                    <!-- Tracking Engine -->
+                    <div class="card">
+                        <h3 style="margin-top:0;">📊 Tracking Engine</h3>
+                        <div class="table-container">
+                            <table class="data-table" id="analyticsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Competitor</th>
+                                        <th>X Followers</th>
+                                        <th>Daily Δ</th>
+                                        <th>Weekly Δ</th>
+                                        <th>LinkedIn</th>
+                                        <th>Strategy</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="analyticsBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Popular Tweets -->
+                    <div class="card">
+                        <h3 style="margin-top:0;">🔥 Popular Competitor Tweets This Week</h3>
+                        <div id="popularTweets">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div>
+                    <div class="card highlight-card">
+                        <h3 style="margin-top:0;">🤖 Precogs AI</h3>
+                        <div class="stat-card">
+                            <h1 id="precogsFollowers">361</h1>
+                            <p>X Followers</p>
+                        </div>
+                        <p id="precogsGrowth"><span class="trend-up">↗ +42 this week</span></p>
+                        <p style="font-size: 0.9rem;">Goal: <strong>1,000</strong> by Jan 15</p>
+                    </div>
+
+                    <!-- AI Suggestions -->
+                    <div class="card">
+                        <h3 style="margin-top:0;">🧠 AI Strategy Suggestions</h3>
+                        <div id="aiSuggestions">
+                            <div class="suggestion-box">
+                                <h4>✅ Doing Right</h4>
+                                <p>Technical content + "Build in Public" resonates. Keep the AI prediction angle.</p>
+                            </div>
+                            <div class="suggestion-box"
+                                style="background: linear-gradient(135deg, #fee2e2, #fecaca); border-color: #ef4444;">
+                                <h4 style="color:#991b1b;">⚠️ Needs Work</h4>
+                                <p style="color:#7f1d1d;">Low reply volume. Competitors are engaging 10x more in
+                                    comments.</p>
+                            </div>
+                            <div class="suggestion-box"
+                                style="background: linear-gradient(135deg, #dbeafe, #bfdbfe); border-color: #3b82f6;">
+                                <h4 style="color:#1e40af;">💡 Recommended Action</h4>
+                                <p style="color:#1e3a8a;">Increase "Reply Guy" to 15/day. Focus on Snyk complaint
+                                    threads.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary -->
+                    <div class="card">
+                        <h3 style="margin-top:0;">📋 Weekly Summary</h3>
+                        <div id="weeklySummary">
+                            <p><strong>Total Market:</strong> 323,261 followers</p>
+                            <p><strong>Precogs Share:</strong> 0.11%</p>
+                            <p><strong>Best Performer:</strong> Snyk (+1.2%)</p>
+                            <p><strong>Your Rank:</strong> 8 of 8 (Growing!)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Tab: Calendar -->
+        <div id="sm-calendar" class="sub-tab-content">
+            <h2>📅 Week 1: Launch Week (Dec 15-21)</h2>
+            <p>Goal: <strong>+50 X followers</strong> and <strong>50 valuable replies</strong> this week.</p>
+
+            <!-- MONDAY -->
+            <div class="card">
+                <h3 style="margin-top:0;">🔴 Monday, December 15 — Launch Day</h3>
+                <div class="table-container">
+                    <table class="data-table" id="table-mon">
+                        <thead>
+                            <tr>
+                                <th width="40">✅</th>
+                                <th width="90">Time</th>
+                                <th width="90">Type</th>
+                                <th>Task / Content</th>
+                                <th width="140">Assignee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="task-m15-1">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-m15-1')">
+                                </td>
+                                <td>08:30 AM</td>
+                                <td><span class="tag-growth">Growth</span></td>
+                                <td><strong>Reply Guy Sprint:</strong> Reply to 10 tweets searching for
+                                    <code>"false positive" OR "snyk noise"</code>. Be helpful, not salesy.
+                                </td>
+                                <td><select class="assignee-select" id="assign-m15-1"></select></td>
+                            </tr>
+                            <tr id="task-m15-2">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-m15-2')">
+                                </td>
+                                <td>09:00 AM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td>🧵 <strong>Intro Thread (5 tweets):</strong> "🔮 Introducing Precogs AI. We PREDICT
+                                    vulnerabilities vs pattern matching. Here's why it matters... [thread]"</td>
+                                <td><select class="assignee-select" id="assign-m15-2"></select></td>
+                            </tr>
+                            <tr id="task-m15-3">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-m15-3')">
+                                </td>
+                                <td>10:00 AM</td>
+                                <td><span class="tag-post">LinkedIn</span></td>
+                                <td><strong>LinkedIn Launch:</strong> "Excited to announce Precogs AI..." Tag 3
+                                    CISOs/DevSecOps leaders. Add personal story.</td>
+                                <td><select class="assignee-select" id="assign-m15-3"></select></td>
+                            </tr>
+                            <tr id="task-m15-4">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-m15-4')">
+                                </td>
+                                <td>12:00 PM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td><strong>Poll:</strong> "Biggest DevSecOps pain? A) False positives B) Slow scans C)
+                                    Tool sprawl D) Manual config"</td>
+                                <td><select class="assignee-select" id="assign-m15-4"></select></td>
+                            </tr>
+                            <tr id="task-m15-5">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-m15-5')">
+                                </td>
+                                <td>05:00 PM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td><strong>Stat Drop:</strong> "84% of codebases have at least 1 known vulnerability.
+                                    (Snyk 2025) How confident are you in yours?"</td>
+                                <td><select class="assignee-select" id="assign-m15-5"></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="add-task-btn" onclick="addNewTask('table-mon', 'mon')">+ Add Custom Task</button>
+                </div>
+            </div>
+
+            <!-- TUESDAY -->
+            <div class="card">
+                <h3 style="margin-top:0;">Tuesday, December 16 — Influencer Day</h3>
+                <div class="table-container">
+                    <table class="data-table" id="table-tue">
+                        <thead>
+                            <tr>
+                                <th width="40">✅</th>
+                                <th width="90">Time</th>
+                                <th width="90">Type</th>
+                                <th>Task / Content</th>
+                                <th width="140">Assignee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="task-t16-1">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-t16-1')">
+                                </td>
+                                <td>08:30 AM</td>
+                                <td><span class="tag-growth">Growth</span></td>
+                                <td><strong>Influencer Setup:</strong> Turn notifications ON for @troyhunt,
+                                    @GossiTheDog, @SwiftOnSecurity. Reply within 15 mins of their posts.</td>
+                                <td><select class="assignee-select" id="assign-t16-1"></select></td>
+                            </tr>
+                            <tr id="task-t16-2">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-t16-2')">
+                                </td>
+                                <td>09:00 AM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td><strong>Technical Tip:</strong> "🚨 SQL Injection is STILL #1 on OWASP. Logic flaws
+                                    > Syntax errors. Here's what regex misses... [explain]"</td>
+                                <td><select class="assignee-select" id="assign-t16-2"></select></td>
+                            </tr>
+                            <tr id="task-t16-3">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-t16-3')">
+                                </td>
+                                <td>12:00 PM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td><strong>Demo GIF:</strong> "[GIF] Watch AI predict a vulnerability before I even
+                                    commit code. 60 seconds."</td>
+                                <td><select class="assignee-select" id="assign-t16-3"></select></td>
+                            </tr>
+                            <tr id="task-t16-4">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-t16-4')">
+                                </td>
+                                <td>03:00 PM</td>
+                                <td><span class="tag-growth">Growth</span></td>
+                                <td><strong>Reply Sprint #2:</strong> 10 replies. Search: <code>"SAST slow"</code> or
+                                    <code>"security scanner"</code>
+                                </td>
+                                <td><select class="assignee-select" id="assign-t16-4"></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="add-task-btn" onclick="addNewTask('table-tue', 'tue')">+ Add Custom Task</button>
+                </div>
+            </div>
+
+            <!-- WEDNESDAY -->
+            <div class="card">
+                <h3 style="margin-top:0;">Wednesday, December 17 — Video Day</h3>
+                <div class="table-container">
+                    <table class="data-table" id="table-wed">
+                        <thead>
+                            <tr>
+                                <th width="40">✅</th>
+                                <th width="90">Time</th>
+                                <th width="90">Type</th>
+                                <th>Task / Content</th>
+                                <th width="140">Assignee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="task-w17-1">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-w17-1')">
+                                </td>
+                                <td>08:30 AM</td>
+                                <td><span class="tag-growth">Growth</span></td>
+                                <td><strong>Competitor Stealth:</strong> Search <code>"CodeRabbit vs Snyk"</code> and
+                                    <code>"Aikido security"</code>. Reply pitch Precogs as AI-native alternative.
+                                </td>
+                                <td><select class="assignee-select" id="assign-w17-1"></select></td>
+                            </tr>
+                            <tr id="task-w17-2">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-w17-2')">
+                                </td>
+                                <td>09:00 AM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td><strong>Feature Highlight:</strong> "SBOM generation in 60 seconds. Connect → Scan →
+                                    Download. #SupplyChainSecurity"</td>
+                                <td><select class="assignee-select" id="assign-w17-2"></select></td>
+                            </tr>
+                            <tr id="task-w17-3">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-w17-3')">
+                                </td>
+                                <td>03:00 PM</td>
+                                <td><span class="tag-video">Video</span></td>
+                                <td><strong>YouTube Upload:</strong> "Precogs AI Demo: GitHub to Security Report in 60
+                                    Seconds" — Share on X/LinkedIn.</td>
+                                <td><select class="assignee-select" id="assign-w17-3"></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="add-task-btn" onclick="addNewTask('table-wed', 'wed')">+ Add Custom Task</button>
+                </div>
+            </div>
+
+            <!-- THURSDAY -->
+            <div class="card">
+                <h3 style="margin-top:0;">Thursday, December 18 — Engagement Day</h3>
+                <div class="table-container">
+                    <table class="data-table" id="table-thu">
+                        <thead>
+                            <tr>
+                                <th width="40">✅</th>
+                                <th width="90">Time</th>
+                                <th width="90">Type</th>
+                                <th>Task / Content</th>
+                                <th width="140">Assignee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="task-th18-1">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-th18-1')">
+                                </td>
+                                <td>08:30 AM</td>
+                                <td><span class="tag-growth">Growth</span></td>
+                                <td><strong>Reply Sprint:</strong> 15 replies. Search:
+                                    <code>"code review" OR "pull request security"</code>
+                                </td>
+                                <td><select class="assignee-select" id="assign-th18-1"></select></td>
+                            </tr>
+                            <tr id="task-th18-2">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-th18-2')">
+                                </td>
+                                <td>09:00 AM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td><strong>Educational Thread:</strong> "🧵 5 SQLi patterns that regex-based scanners
+                                    miss (but AI catches)..."</td>
+                                <td><select class="assignee-select" id="assign-th18-2"></select></td>
+                            </tr>
+                            <tr id="task-th18-3">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-th18-3')">
+                                </td>
+                                <td>12:00 PM</td>
+                                <td><span class="tag-post">LinkedIn</span></td>
+                                <td><strong>LinkedIn Article:</strong> Repost founder's "Why I built Precogs" with
+                                    personal angle.</td>
+                                <td><select class="assignee-select" id="assign-th18-3"></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="add-task-btn" onclick="addNewTask('table-thu', 'thu')">+ Add Custom Task</button>
+                </div>
+            </div>
+
+            <!-- FRIDAY -->
+            <div class="card">
+                <h3 style="margin-top:0;">Friday, December 19 — Fun Day</h3>
+                <div class="table-container">
+                    <table class="data-table" id="table-fri">
+                        <thead>
+                            <tr>
+                                <th width="40">✅</th>
+                                <th width="90">Time</th>
+                                <th width="90">Type</th>
+                                <th>Task / Content</th>
+                                <th width="140">Assignee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="task-fri19-1">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-fri19-1')">
+                                </td>
+                                <td>09:00 AM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td><strong>Weekend Meme:</strong> Security-related humor. "Me explaining to my PM why
+                                    we need another security tool 🙃"</td>
+                                <td><select class="assignee-select" id="assign-fri19-1"></select></td>
+                            </tr>
+                            <tr id="task-fri19-2">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-fri19-2')">
+                                </td>
+                                <td>12:00 PM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td><strong>Week Recap:</strong> "Week 1 building Precogs in public 🧵: Shipped [X],
+                                    Learned [Y], Next week [Z]..."</td>
+                                <td><select class="assignee-select" id="assign-fri19-2"></select></td>
+                            </tr>
+                            <tr id="task-fri19-3">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-fri19-3')">
+                                </td>
+                                <td>05:00 PM</td>
+                                <td><span class="tag-growth">Growth</span></td>
+                                <td><strong>Engagement Check:</strong> Reply to ALL quote tweets and mentions from the
+                                    week.</td>
+                                <td><select class="assignee-select" id="assign-fri19-3"></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="add-task-btn" onclick="addNewTask('table-fri', 'fri')">+ Add Custom Task</button>
+                </div>
+            </div>
+
+            <!-- WEEKEND -->
+            <div class="card">
+                <h3 style="margin-top:0;">⚡ Weekend (Sat-Sun) — Light Touch</h3>
+                <div class="table-container">
+                    <table class="data-table" id="table-weekend">
+                        <thead>
+                            <tr>
+                                <th width="40">✅</th>
+                                <th width="90">Time</th>
+                                <th width="90">Type</th>
+                                <th>Task / Content</th>
+                                <th width="140">Assignee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="task-sat20-1">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-sat20-1')">
+                                </td>
+                                <td>10:00 AM</td>
+                                <td><span class="tag-growth">Growth</span></td>
+                                <td><strong>Saturday Sprint:</strong> 5 thoughtful replies (quality over quantity)</td>
+                                <td><select class="assignee-select" id="assign-sat20-1"></select></td>
+                            </tr>
+                            <tr id="task-sun21-1">
+                                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-sun21-1')">
+                                </td>
+                                <td>04:00 PM</td>
+                                <td><span class="tag-post">Post</span></td>
+                                <td><strong>Sunday Prep:</strong> Schedule Monday's posts. "Getting ready for a big week
+                                    at Precogs 🔮"</td>
+                                <td><select class="assignee-select" id="assign-sun21-1"></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="add-task-btn" onclick="addNewTask('table-weekend', 'weekend')">+ Add Custom
+                        Task</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Growth -->
+        <div id="sm-growth" class="sub-tab-content">
+            <h3>🚀 Growth Playbook</h3>
+            <p>Research-backed strategies for B2B SaaS social media growth. Based on 2025 best practices for X (Twitter)
+                and LinkedIn engagement.</p>
+
+            <!-- Core Strategies -->
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h4>The "Reply Guy" Engine</h4>
+                    <p><strong>Goal:</strong> 15 valuable replies/day</p>
+                    <p>Tweets with "case study" get 38% more B2B engagement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h4>Influencer Drafting</h4>
+                    <p>Notifications ON for key influencers. Reply within 15 mins to draft off their reach.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4>Poll Engagement</h4>
+                    <p>Controversial "this or that" polls drive 427% more engagement. Low friction = high reach.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Trend Jacking</h4>
+                    <p>React to breaking CVE news within 1 hour. First-mover advantage on security incidents.</p>
+                </div>
+            </div>
+
+            <!-- Reply Guy Deep Dive -->
+            <div class="card">
+                <h3>💬 The "Reply Guy" Strategy (Deep Dive)</h3>
+                <p>This is the #1 tactic for early-stage startups. 82% of B2B companies use X for content marketing.</p>
+
+                <h4>🎯 Search Queries to Monitor</h4>
+                <div class="table-container" style="margin:12px 0;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Search Term</th>
+                                <th>Why It Works</th>
+                                <th>Reply Angle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>"snyk false positive"</code></td>
+                                <td>Pain point for your ICP</td>
+                                <td>Empathize + mention AI-powered accuracy</td>
+                            </tr>
+                            <tr>
+                                <td><code>"sonar noise"</code></td>
+                                <td>Common complaint</td>
+                                <td>"We felt that too. That's why we built intent analysis..."</td>
+                            </tr>
+                            <tr>
+                                <td><code>"SAST slow"</code></td>
+                                <td>Performance frustration</td>
+                                <td>Highlight speed without sacrificing depth</td>
+                            </tr>
+                            <tr>
+                                <td><code>"security scanner" OR "code security"</code></td>
+                                <td>General interest</td>
+                                <td>Offer helpful tips, not direct pitch</td>
+                            </tr>
+                            <tr>
+                                <td><code>"SBOM generation"</code></td>
+                                <td>Compliance need</td>
+                                <td>Mention your instant SBOM feature</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>📋 Reply Checklist</h4>
+                <ul>
+                    <li>✅ <strong>Lead with empathy:</strong> "I've been there..."</li>
+                    <li>✅ <strong>Add value first:</strong> Share a tip, not a link</li>
+                    <li>✅ <strong>Keep it short:</strong> 71-100 chars get highest engagement</li>
+                    <li>✅ <strong>Ask a question:</strong> "What's your current workflow?" (150% more replies)</li>
+                    <li>❌ <strong>Don't:</strong> Pitch immediately or drop links without context</li>
+                </ul>
+            </div>
+
+            <!-- Influencer Targets -->
+            <div class="card">
+                <h3>🔔 Influencer Target List</h3>
+                <p>Turn notifications ON for these accounts. Reply within 15 minutes of their posts to maximize
+                    visibility.</p>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Accounts</th>
+                                <th>Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Security Thought Leaders</strong></td>
+                                <td>@troyhunt, @GossiTheDog, @SwiftOnSecurity</td>
+                                <td>"Yes, and..." agreement + your insight</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Developer Advocates</strong></td>
+                                <td>@shanselman, @kelaboratory, @caborabbit</td>
+                                <td>Celebrate their work, add security angle</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Competitors</strong></td>
+                                <td>@snyksec, @AikidoSec, @semaborge</td>
+                                <td>Don't attack. Reply to their community's complaints.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tech Media</strong></td>
+                                <td>@hackernews, @TechCrunch, @aaborabbiturity</strong></td>
+                                <td>Be first with analysis on breaking news</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Content Strategy -->
+            <div class="card">
+                <h3>📝 Content Strategy (80/20 Rule)</h3>
+                <p>80% value content, 20% promotional. This is the golden ratio for B2B social.</p>
+
+                <h4>Value Content (80%)</h4>
+                <ul>
+                    <li>🔒 <strong>Security Tips:</strong> "5 SQLi patterns regex misses"</li>
+                    <li>📊 <strong>Data & Stats:</strong> "84% of codebases have at least 1 vulnerability (Snyk)"</li>
+                    <li>🧵 <strong>Educational Threads:</strong> Deep dives on OWASP Top 10</li>
+                    <li>🗳️ <strong>Polls:</strong> "Biggest DevSecOps pain? A) False positives B) Slow scans..."</li>
+                    <li>🎬 <strong>Short-form Video:</strong> 30-60 second demos (dominating in 2025)</li>
+                </ul>
+
+                <h4>Promotional Content (20%)</h4>
+                <ul>
+                    <li>🚀 <strong>Product Launches:</strong> Feature announcements with demos</li>
+                    <li>📈 <strong>Social Proof:</strong> Customer testimonials, case studies</li>
+                    <li>🎯 <strong>CTAs:</strong> "Try our free scan" with demo GIF</li>
+                </ul>
+            </div>
+
+            <!-- AI Growth Hacking -->
+            <div class="card highlight-card">
+                <h3>🤖 AI-Powered Growth (ChatGPT/Claude)</h3>
+                <p>Use LLMs to scale your content production 10x. Here are proven prompts:</p>
+
+                <h4>1. Content Repurposing Engine</h4>
+                <p>Turn 1 blog post into 10 pieces of content.</p>
+                <div style="background:#1e1b4b; padding:16px; border-radius:12px; margin:12px 0;">
+                    <code
+                        style="color:#e0e7ff; background:none;">Prompt: "Analyze this technical blog post about SQL Injection. Extract 5 counter-intuitive insights. Write 5 viral-style X threads (hook + insight + payoff). Maintain a 'Direct, Senior Engineer' tone. Max 280 chars per tweet."</code>
+                </div>
+
+                <h4>2. Reply Draft Assistant</h4>
+                <p>Generate empathetic, high-value replies at scale.</p>
+                <div style="background:#1e1b4b; padding:16px; border-radius:12px; margin:12px 0;">
+                    <code
+                        style="color:#e0e7ff; background:none;">Prompt: "Here is a tweet complaining about [Snyk false positives]. Draft a reply that: 1) Empathizes with their pain, 2) Offers a genuine tip (not a pitch), 3) Is under 200 chars. Sound human, not corporate."</code>
+                </div>
+
+                <h4>3. Competitor Intelligence</h4>
+                <p>Summarize competitor reviews to find pain points.</p>
+                <div style="background:#1e1b4b; padding:16px; border-radius:12px; margin:12px 0;">
+                    <code
+                        style="color:#e0e7ff; background:none;">Prompt: "Summarize the top 20 negative reviews of Snyk and Veracode from G2. Identify 3 recurring complaints. For each, suggest how Precogs AI could position as the solution."</code>
+                </div>
+            </div>
+
+            <!-- Posting Schedule -->
+            <div class="card">
+                <h3>⏰ Optimal Posting Schedule</h3>
+                <p>B2B content performs 16% better on weekdays between 3-5 PM.</p>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Frequency</th>
+                                <th>Best Times (GMT)</th>
+                                <th>Pro Tip</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>X (Twitter)</strong></td>
+                                <td>2-3x daily</td>
+                                <td>9AM, 12PM, 5PM</td>
+                                <td>Tweets with 1-2 hashtags only. More = -17% engagement.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>LinkedIn</strong></td>
+                                <td>5x weekly</td>
+                                <td>8-10AM, 12PM</td>
+                                <td>First comment matters. Add a question to boost.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>YouTube</strong></td>
+                                <td>4x monthly</td>
+                                <td>2-4PM weekdays</td>
+                                <td>Short-form (≤60s) for awareness, long-form for conversions.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Conversion Funnel -->
+            <div class="card">
+                <h3>🎯 Traffic → Conversion Funnel</h3>
+                <ul>
+                    <li><strong>Bio Optimization:</strong> "Predict vulnerabilities before they happen. 90% fewer false
+                        positives. Scan free 👇"</li>
+                    <li><strong>Pinned Tweet:</strong> Hook → Social Proof → Demo GIF → CTA ("Try free")</li>
+                    <li><strong>Link-in-Bio Tool:</strong> Use Linktree or custom page with multiple CTAs</li>
+                    <li><strong>Engineering as Marketing:</strong> Build a tiny free tool (e.g., "Instant SBOM
+                        Generator") to attract users</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab: Blog -->
+        <div id="sm-blog" class="sub-tab-content">
+            <h2>✍️ Blog Engine & Content Pipeline</h2>
+            <p>SEO-optimized technical content for DevSecOps thought leadership. Goal: 1 high-quality piece per week.
+            </p>
+
+            <!-- Blog Pipeline Table -->
+            <div class="card">
+                <h3 style="margin-top:0;">📋 Content Pipeline</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th width="100">Status</th>
+                                <th>Topic</th>
+                                <th>Type</th>
+                                <th width="130">Target Keywords</th>
+                                <th width="120">Assignee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span
+                                        style="background:#fce7f3; color:#9d174d; padding:4px 8px; border-radius:4px;">Research</span>
+                                </td>
+                                <td><strong>The End of Pattern Matching: Why Intent Analysis Wins</strong></td>
+                                <td>Deep Technical</td>
+                                <td>SAST alternatives, AI code analysis</td>
+                                <td><select class="assignee-select" id="assign-blog-1"></select></td>
+                            </tr>
+                            <tr>
+                                <td><span
+                                        style="background:#dbeafe; color:#1e40af; padding:4px 8px; border-radius:4px;">Drafting</span>
+                                </td>
+                                <td><strong>CVE-2025-XXXX Analysis: What Your Scanner Missed</strong></td>
+                                <td>Timely/News</td>
+                                <td>CVE analysis, vulnerability disclosure</td>
+                                <td><select class="assignee-select" id="assign-blog-2"></select></td>
+                            </tr>
+                            <tr>
+                                <td><span
+                                        style="background:#ecfccb; color:#3f6212; padding:4px 8px; border-radius:4px;">Planned</span>
+                                </td>
+                                <td><strong>Secure Your Weekend Project in 5 Minutes</strong></td>
+                                <td>Practical Guide</td>
+                                <td>indie hacker security, startup security</td>
+                                <td><select class="assignee-select" id="assign-blog-3"></select></td>
+                            </tr>
+                            <tr>
+                                <td><span
+                                        style="background:#ecfccb; color:#3f6212; padding:4px 8px; border-radius:4px;">Planned</span>
+                                </td>
+                                <td><strong>Shift Left Security in 2025: The Complete Guide</strong></td>
+                                <td>SEO Pillar</td>
+                                <td>shift left security, DevSecOps best practices</td>
+                                <td><select class="assignee-select" id="assign-blog-4"></select></td>
+                            </tr>
+                            <tr>
+                                <td><span
+                                        style="background:#ecfccb; color:#3f6212; padding:4px 8px; border-radius:4px;">Planned</span>
+                                </td>
+                                <td><strong>SBOM in 60 Seconds: Why Supply Chain Transparency Matters</strong></td>
+                                <td>Product-Led</td>
+                                <td>SBOM generation, software supply chain</td>
+                                <td><select class="assignee-select" id="assign-blog-5"></select></td>
+                            </tr>
+                            <tr>
+                                <td><span
+                                        style="background:#ecfccb; color:#3f6212; padding:4px 8px; border-radius:4px;">Planned</span>
+                                </td>
+                                <td><strong>Too Much Noise? Reducing False Positives in Your Security Pipeline</strong>
+                                </td>
+                                <td>Problem/Solution</td>
+                                <td>false positives, SAST noise, DevSecOps challenges</td>
+                                <td><select class="assignee-select" id="assign-blog-6"></select></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Topic 1: Deep Dive -->
+            <div class="card highlight-card">
+                <h3 style="margin-top:0;">📝 Topic 1: The End of Pattern Matching</h3>
+                <p><strong>Angle:</strong> Controversial take on why regex-based SAST is fundamentally flawed.</p>
+
+                <h4>Outline</h4>
+                <ol>
+                    <li><strong>Hook:</strong> Show a code snippet that looks safe to regex but is exploitable (e.g.,
+                        multi-step SQLi).</li>
+                    <li><strong>Core Argument:</strong> Traditional SAST = Spellcheck. AI SAST = Reading Comprehension.
+                        Pattern matching can't understand <em>intent</em>.</li>
+                    <li><strong>Data Point:</strong> "84% of codebases have at least 1 known vulnerability" (Snyk 2025
+                        Report).</li>
+                    <li><strong>Case Study:</strong> Show Precogs finding a vulnerability that Snyk/Semgrep missed based
+                        on variable naming context.</li>
+                    <li><strong>CTA:</strong> "Stop grepping your code. Start understanding it." + Free Scan CTA.</li>
+                </ol>
+
+                <h4>SEO Keywords</h4>
+                <p><code>SAST alternatives</code>, <code>AI code analysis</code>, <code>semantic code analysis</code>,
+                    <code>DevSecOps AI</code>
+                </p>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="card">
+                <h3 style="margin-top:0;">📝 Topic 2: CVE-2025-XXXX Analysis</h3>
+                <p><strong>Angle:</strong> Deep technical dive on a recent high-profile CVE. Time-sensitive content.</p>
+
+                <h4>Outline</h4>
+                <ol>
+                    <li><strong>Hook:</strong> "Yesterday, [Company] disclosed CVE-2025-XXXX. Here's what it means for
+                        your codebase."</li>
+                    <li><strong>Technical Analysis:</strong> Explain the vulnerability in plain English + technical
+                        detail.</li>
+                    <li><strong>Proof of Detection:</strong> Show how Precogs would have flagged this before disclosure.
+                    </li>
+                    <li><strong>Action Items:</strong> Exact commands/steps to check if your code is affected.</li>
+                    <li><strong>CTA:</strong> "Scan your repo free" link.</li>
+                </ol>
+
+                <h4>Distribution</h4>
+                <p>Post on HackerNews, Reddit r/netsec, X within 6 hours of CVE disclosure.</p>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="card">
+                <h3 style="margin-top:0;">📝 Topic 3: Secure Your Weekend Project</h3>
+                <p><strong>Angle:</strong> Practical, beginner-friendly guide for indie hackers and solo devs.</p>
+
+                <h4>Outline</h4>
+                <ol>
+                    <li><strong>Hook:</strong> "You shipped. It's growing. But one SQL Injection could kill it by
+                        Monday."</li>
+                    <li><strong>Step 1:</strong> Add Precogs GitHub Action (5 lines of YAML).</li>
+                    <li><strong>Step 2:</strong> Run Dependabot for dependency vulnerabilities.</li>
+                    <li><strong>Step 3:</strong> Add security headers (free Next.js template provided).</li>
+                    <li><strong>Step 4:</strong> Enable 2FA everywhere.</li>
+                    <li><strong>CTA:</strong> "Here's our free 5-minute DevSecOps checklist."</li>
+                </ol>
+
+                <h4>SEO Keywords</h4>
+                <p><code>startup security checklist</code>, <code>indie hacker security</code>,
+                    <code>secure my webapp</code>
+                </p>
+            </div>
+
+            <!-- Topic 4: Shift Left -->
+            <div class="card">
+                <h3 style="margin-top:0;">📝 Topic 4: Shift Left Security (SEO Pillar)</h3>
+                <p><strong>Angle:</strong> Comprehensive guide targeting a high-volume SEO keyword. 2,500+ words.</p>
+
+                <h4>Outline</h4>
+                <ol>
+                    <li><strong>What is Shift Left Security?</strong> Definition + history.</li>
+                    <li><strong>Why It Matters in 2025:</strong> Early detection = 10x cheaper to fix.</li>
+                    <li><strong>How to Implement:</strong> SAST, DAST, SCA, IaC scanning explained.</li>
+                    <li><strong>Tools Comparison:</strong> Snyk, Semgrep, Checkmarx, Precogs (fair comparison).</li>
+                    <li><strong>Best Practices:</strong> 10 actionable tips for DevOps teams.</li>
+                    <li><strong>CTA:</strong> "Start shifting left with a free Precogs scan."</li>
+                </ol>
+
+                <h4>SEO Keywords</h4>
+                <p><code>shift left security</code>, <code>DevSecOps best practices</code>, <code>SDLC security</code>
+                </p>
+            </div>
+
+            <!-- Distribution Strategy -->
+            <div class="card">
+                <h3 style="margin-top:0;">📢 Distribution Strategy</h3>
+                <p>Where to post each piece for maximum reach:</p>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Best For</th>
+                                <th>Pro Tip</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>HackerNews</strong></td>
+                                <td>Deep technical, controversial takes</td>
+                                <td>Post 6-9 AM PST Tuesday-Thursday. Avoid self-promotion in comments.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reddit (r/netsec, r/devops)</strong></td>
+                                <td>Technical analysis, free tools</td>
+                                <td>Engage genuinely for weeks before posting. Don't just drop links.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>X (Twitter)</strong></td>
+                                <td>Thread summaries, visual demos</td>
+                                <td>Turn blog into 10-tweet thread. Include demo GIF.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>LinkedIn</strong></td>
+                                <td>Enterprise, CISO personas</td>
+                                <td>Personal post from founder outperforms company page 5x.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dev.to</strong></td>
+                                <td>Practical guides, tutorials</td>
+                                <td>Cross-post with canonical URL pointing to your blog.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2025 Precogs AI. All rights reserved.</p>
+        <p><a href="../index.html">← Back to Documentation</a></p>
+    </footer>
+
+    <script>
+        // --- CONSTANTS ---
+        const ASSIGNEES = ["Unassigned", "Rajnish", "Yasi", "Sameer", "Abhishek", "Avinash", "AI Agents", "Team", "TBD"];
+        const INITIAL_DATA = [
+            { name: "Precogs AI", handle: "@precogs_ai", followers: 361, linkedin: "Active", strategy: "AI Prediction", popularTweet: "🔮 Introducing Precogs AI..." },
+            { name: "Snyk", handle: "@snyksec", followers: 125000, linkedin: "100K+", strategy: "DevRel Memes", popularTweet: "That feeling when your scanner finds 0 false positives 😎" },
+            { name: "CodeRabbit", handle: "@caborabbit", followers: 15400, linkedin: "10K+", strategy: "AI Demos", popularTweet: "Watch AI review your PR in seconds ✨" },
+            { name: "Aikido", handle: "@AikidoSec", followers: 8500, linkedin: "Growing", strategy: "Real Talk", popularTweet: "We're tired of security theater. Here's what actually works..." },
+            { name: "Checkmarx", handle: "@Checkmarx", followers: 45000, linkedin: "40K+", strategy: "Enterprise", popularTweet: "New Gartner report positions us as Leader 📊" },
+            { name: "Veracode", handle: "@Veracode", followers: 52000, linkedin: "50K+", strategy: "Reports", popularTweet: "State of Software Security 2025 is here 📈" },
+            { name: "Semgrep", handle: "@semaborge", followers: 12000, linkedin: "15K+", strategy: "AppSec", popularTweet: "Write custom rules in minutes ⚡" },
+            { name: "SonarCube", handle: "@SonarQube", followers: 65000, linkedin: "60K+", strategy: "Code Quality", popularTweet: "Clean code is secure code. Here's how..." }
+        ];
+
+        // --- INIT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            initAssignees();
+            initAnalytics();
+            loadTasks();
+            loadCustomTasks();
+        });
+
+        // --- TAB SWITCHING ---
+        function switchSubTab(event, tabId) {
+            document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            document.querySelectorAll('.sub-tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            if (tabId === 'sm-analytics') renderChart();
+        }
+
+        // --- ANALYTICS ENGINE ---
+        function initAnalytics() {
+            const history = JSON.parse(localStorage.getItem('precogs_analytics_history') || '[]');
+            const latestEntry = history.length > 0 ? history[history.length - 1] : null;
+            const data = latestEntry ? latestEntry.data : INITIAL_DATA;
+
+            // Update last updated
+            if (latestEntry) {
+                document.getElementById('lastUpdated').innerText = 'Last updated: ' + new Date(latestEntry.date).toLocaleDateString();
+            }
+
+            // Get previous data for comparison
+            const yesterday = history.length > 1 ? history[history.length - 2] : null;
+            const weekAgo = history.length > 7 ? history[history.length - 8] : null;
+
+            const tbody = document.getElementById('analyticsBody');
+            tbody.innerHTML = '';
+
+            data.forEach((comp, idx) => {
+                const dailyChange = yesterday ? comp.followers - (yesterday.data[idx]?.followers || comp.followers) : 0;
+                const weeklyChange = weekAgo ? comp.followers - (weekAgo.data[idx]?.followers || comp.followers) : 0;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><strong>${comp.name}</strong><br><span style="color:var(--text-muted);font-size:0.8rem;">${comp.handle}</span></td>
+                    <td><input type="number" class="competitor-input" value="${comp.followers}" data-idx="${idx}"></td>
+                    <td class="${dailyChange > 0 ? 'trend-up' : dailyChange < 0 ? 'trend-down' : 'trend-same'}">${dailyChange > 0 ? '+' : ''}${dailyChange}</td>
+                    <td class="${weeklyChange > 0 ? 'trend-up' : weeklyChange < 0 ? 'trend-down' : 'trend-same'}">${weeklyChange > 0 ? '+' : ''}${weeklyChange}</td>
+                    <td>${comp.linkedin}</td>
+                    <td>${comp.strategy}</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            // Update Precogs sidebar
+            document.getElementById('precogsFollowers').innerText = data[0].followers.toLocaleString();
+
+            // Render popular tweets
+            renderPopularTweets(data);
+            renderChart(data);
+            updateSummary(data);
+        }
+
+        function saveAllAnalytics() {
+            const inputs = document.querySelectorAll('#analyticsBody input.competitor-input');
+            const history = JSON.parse(localStorage.getItem('precogs_analytics_history') || '[]');
+            const latestEntry = history.length > 0 ? history[history.length - 1] : null;
+            const baseData = latestEntry ? [...latestEntry.data] : [...INITIAL_DATA];
+
+            inputs.forEach(input => {
+                const idx = parseInt(input.dataset.idx);
+                baseData[idx].followers = parseInt(input.value) || baseData[idx].followers;
+            });
+
+            // Add new entry with today's date
+            const today = new Date().toISOString().split('T')[0];
+
+            // Check if we already have an entry for today
+            const todayIdx = history.findIndex(h => h.date.startsWith(today));
+            if (todayIdx >= 0) {
+                history[todayIdx] = { date: new Date().toISOString(), data: baseData };
+            } else {
+                history.push({ date: new Date().toISOString(), data: baseData });
+            }
+
+            // Keep only last 30 days
+            if (history.length > 30) history.shift();
+
+            localStorage.setItem('precogs_analytics_history', JSON.stringify(history));
+            document.getElementById('lastUpdated').innerText = 'Last updated: ' + new Date().toLocaleDateString();
+
+            alert('✅ Analytics saved! Historical data recorded.');
+            initAnalytics();
+        }
+
+        function refreshData() {
+            // Simulate API refresh with random small changes
+            const history = JSON.parse(localStorage.getItem('precogs_analytics_history') || '[]');
+            const latestEntry = history.length > 0 ? history[history.length - 1] : null;
+            const data = latestEntry ? [...latestEntry.data] : [...INITIAL_DATA];
+
+            data.forEach(comp => {
+                // Simulate small random changes (-50 to +150)
+                const change = Math.floor(Math.random() * 200) - 50;
+                comp.followers = Math.max(0, comp.followers + change);
+            });
+
+            // Update inputs
+            const inputs = document.querySelectorAll('#analyticsBody input.competitor-input');
+            inputs.forEach((input, idx) => {
+                input.value = data[idx].followers;
+            });
+
+            alert('🔄 Refreshed! (Simulated data - enter real numbers and Save)');
+        }
+
+        function renderPopularTweets(data) {
+            const container = document.getElementById('popularTweets');
+            container.innerHTML = '';
+
+            // Show top 3 competitors by followers (excluding Precogs)
+            const top3 = [...data].filter(d => d.name !== "Precogs AI").sort((a, b) => b.followers - a.followers).slice(0, 3);
+
+            top3.forEach(comp => {
+                const div = document.createElement('div');
+                div.className = 'popular-tweet';
+                div.innerHTML = `
+                    <div class="author">${comp.name} <span style="color:var(--text-muted);">${comp.handle}</span></div>
+                    <div class="content">"${comp.popularTweet}"</div>
+                    <div class="stats">🔥 Strategy: ${comp.strategy}</div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderChart(data) {
+            if (!data) {
+                const history = JSON.parse(localStorage.getItem('precogs_analytics_history') || '[]');
+                data = history.length > 0 ? history[history.length - 1].data : INITIAL_DATA;
+            }
+
+            const sorted = [...data].sort((a, b) => b.followers - a.followers);
+            const max = sorted[0].followers;
+
+            const container = document.getElementById('followersChart');
+            container.innerHTML = '';
+
+            sorted.forEach(item => {
+                const heightPct = Math.max((item.followers / max) * 100, 5);
+
+                const group = document.createElement('div');
+                group.className = 'chart-bar-group';
+                group.innerHTML = `
+                    <div class="chart-value">${kFormatter(item.followers)}</div>
+                    <div class="chart-bar" style="height: ${heightPct}%"></div>
+                    <div class="chart-label">${item.name.replace(' AI', '').replace('Cube', '')}</div>
+                 `;
+                container.appendChild(group);
+            });
+        }
+
+        function updateSummary(data) {
+            const total = data.reduce((sum, d) => sum + d.followers, 0);
+            const precogsShare = ((data[0].followers / total) * 100).toFixed(2);
+            const sorted = [...data].sort((a, b) => b.followers - a.followers);
+            const rank = sorted.findIndex(d => d.name === "Precogs AI") + 1;
+
+            document.getElementById('weeklySummary').innerHTML = `
+                <p><strong>Total Market:</strong> ${total.toLocaleString()} followers</p>
+                <p><strong>Precogs Share:</strong> ${precogsShare}%</p>
+                <p><strong>Leader:</strong> ${sorted[0].name}</p>
+                <p><strong>Your Rank:</strong> ${rank} of ${sorted.length}</p>
+            `;
+        }
+
+        function kFormatter(num) {
+            return Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num)
+        }
+
+        // --- TASK MANAGEMENT ---
+        function initAssignees() {
+            document.querySelectorAll('.assignee-select').forEach(select => {
+                const savedVal = localStorage.getItem('assign_' + select.id);
+                select.innerHTML = '';
+                ASSIGNEES.forEach(name => {
+                    const opt = document.createElement('option');
+                    opt.value = name;
+                    opt.textContent = name;
+                    if (name === savedVal) opt.selected = true;
+                    select.appendChild(opt);
+                });
+
+                select.onchange = function () {
+                    localStorage.setItem('assign_' + this.id, this.value);
+                }
+            });
+        }
+
+        function toggleTask(id) {
+            const row = document.getElementById(id);
+            const checkbox = row.querySelector('.task-checkbox');
+            if (checkbox.checked) row.classList.add('completed-row');
+            else row.classList.remove('completed-row');
+            localStorage.setItem('task_status_' + id, checkbox.checked);
+        }
+
+        function loadTasks() {
+            document.querySelectorAll('.task-checkbox').forEach(cb => {
+                const rowId = cb.closest('tr').id;
+                const isChecked = localStorage.getItem('task_status_' + rowId) === 'true';
+                cb.checked = isChecked;
+                if (isChecked) cb.closest('tr').classList.add('completed-row');
+            });
+        }
+
+        function addNewTask(tableId, dayKey) {
+            const table = document.getElementById(tableId).querySelector('tbody');
+            const taskId = `custom-${dayKey}-${Date.now()}`;
+
+            const newRow = document.createElement('tr');
+            newRow.id = taskId;
+            newRow.innerHTML = `
+                <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('${taskId}')"></td>
+                <td contenteditable="true" onblur="saveCustomTasks()">12:00 PM</td>
+                <td contenteditable="true" onblur="saveCustomTasks()">Task</td>
+                <td contenteditable="true" onblur="saveCustomTasks()">New Custom Task</td>
+                <td><select class="assignee-select custom-assign" id="assign-${taskId}" onchange="saveCustomTasks()"></select></td>
+            `;
+
+            table.appendChild(newRow);
+
+            const select = newRow.querySelector('select');
+            ASSIGNEES.forEach(name => {
+                const opt = document.createElement('option');
+                opt.value = name;
+                opt.textContent = name;
+                select.appendChild(opt);
+            });
+
+            saveCustomTasks();
+        }
+
+        function saveCustomTasks() {
+            const customTasks = [];
+            document.querySelectorAll('tr[id^="custom-"]').forEach(row => {
+                customTasks.push({
+                    id: row.id,
+                    parentId: row.closest('table').id,
+                    html: row.innerHTML,
+                    assignee: row.querySelector('select').value
+                });
+            });
+            localStorage.setItem('precogs_custom_tasks', JSON.stringify(customTasks));
+        }
+
+        function loadCustomTasks() {
+            const tasks = JSON.parse(localStorage.getItem('precogs_custom_tasks') || '[]');
+            tasks.forEach(task => {
+                const table = document.getElementById(task.parentId);
+                if (table) {
+                    const newRow = document.createElement('tr');
+                    newRow.id = task.id;
+                    newRow.innerHTML = task.html;
+                    table.querySelector('tbody').appendChild(newRow);
+                    const select = newRow.querySelector('select');
+                    select.value = task.assignee;
+                    select.onchange = saveCustomTasks;
+                    newRow.querySelectorAll('[contenteditable]').forEach(el => el.onblur = saveCustomTasks);
+                }
+            });
+            loadTasks();
+        }
+    </script>
+
+</body>
+
+</html>
