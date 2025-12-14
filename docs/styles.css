@@ -1311,3 +1311,50 @@ td code {
         grid-template-columns: 1fr;
     }
 }
+/* ========================================
+   Sub Tabs (for Social Media Section)
+   ======================================== */
+
+.sub-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    background: var(--bg-secondary);
+    padding: 6px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.sub-tab-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.sub-tab-btn:hover {
+    background: rgba(139, 92, 246, 0.05);
+    color: var(--accent-tertiary);
+}
+
+.sub-tab-btn.active {
+    background: white;
+    color: var(--accent-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+}
+
+.sub-tab-content {
+    display: none;
+    animation: fadeIn var(--transition-normal);
+}
+
+.sub-tab-content.active {
+    display: block;
+}

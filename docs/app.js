@@ -579,3 +579,28 @@ window.showAddTaskModal = showAddTaskModal;
 window.closeAddTaskModal = closeAddTaskModal;
 window.deleteTask = deleteTask;
 window.resetTasks = resetTasks;
+
+/**
+ * Social Media Strategy Sub-Tabs
+ */
+function switchSubTab(event, tabId) {
+    // 1. Remove active class from all buttons
+    const buttons = document.querySelectorAll('.sub-tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // 2. Add active class to clicked button
+    event.currentTarget.classList.add('active');
+
+    // 3. Hide all tab content
+    const contents = document.querySelectorAll('.sub-tab-content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // 4. Show target tab content
+    const target = document.getElementById(tabId);
+    if (target) {
+        target.classList.add('active');
+    }
+}
+
+// Ensure function is global
+window.switchSubTab = switchSubTab;
