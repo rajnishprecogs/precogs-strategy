@@ -1,0 +1,19 @@
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Node modules (if any)
+node_modules/
+
+# Logs
+*.log
+
+# Local environment
+.env
+.env.local
