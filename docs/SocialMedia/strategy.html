@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Media Strategy | Precogs AI</title>
     <meta name="description"
-        content="Precogs AI Social Media Strategy - Content calendar, growth playbook, and competitor analysis for DevSecOps social media marketing.">
+        content="Precogs AI Social Media Strategy - Content calendar, growth playbook, and competitor analysis.">
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -124,7 +124,7 @@
 
         /* Container */
         .page-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 60px 24px;
         }
@@ -172,6 +172,7 @@
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.2s;
+            white-space: nowrap;
         }
 
         .sub-tab-btn:hover {
@@ -212,6 +213,9 @@
             font-weight: 700;
             color: var(--text-dark);
             margin: 40px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         h3 {
@@ -281,7 +285,7 @@
             margin: 0;
         }
 
-        /* Tables */
+        /* Tables & Tasks */
         .table-container {
             overflow-x: auto;
             margin: 24px 0;
@@ -301,6 +305,7 @@
             padding: 14px 16px;
             text-align: left;
             border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
         }
 
         .data-table th {
@@ -311,6 +316,41 @@
 
         .data-table td {
             color: var(--text-secondary);
+        }
+
+        /* Task Inputs */
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent-primary);
+            cursor: pointer;
+        }
+
+        .assignee-select {
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            background: white;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .assignee-select:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1);
+        }
+
+        .completed-row {
+            background: #f0fdf4;
+            opacity: 0.7;
+        }
+
+        .completed-row td {
+            text-decoration: line-through;
+            color: var(--text-muted);
         }
 
         /* Checklist */
@@ -355,6 +395,11 @@
         .callout.success {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(52, 211, 153, 0.08));
             border-left: 4px solid #10b981;
+        }
+
+        .callout.tip {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(96, 165, 250, 0.08));
+            border-left: 4px solid #3b82f6;
         }
 
         .callout strong {
@@ -435,372 +480,435 @@
 
         <header class="page-header">
             <h1 class="page-title">📱 Social Media Strategy</h1>
-            <p class="page-meta">Content Calendar • Growth Playbook • Competitor Analysis</p>
+            <p class="page-meta">Growth Engines • Content Calendar • Blog Pipeline</p>
         </header>
 
         <!-- Status Card -->
         <div class="card highlight-card">
-            <h3>🎯 Current Status: @precogs_ai</h3>
-            <p><strong>361 followers</strong> on X (Twitter) - launched November 2025. Solid foundation for a new
-                security startup!</p>
-            <p><a href="https://x.com/precogs_ai" target="_blank" style="color: var(--accent-primary);">View @precogs_ai
-                    on X →</a></p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3>🎯 Growth Dashboard</h3>
+                    <p><strong>361 followers</strong> on X. Goal: 1,000 via "Reply Guy" Engine.</p>
+                </div>
+                <div style="text-align: right;">
+                    <a href="https://x.com/precogs_ai" target="_blank" class="cta-btn" style="font-size: 0.9rem;">View
+                        Profile →</a>
+                </div>
+            </div>
         </div>
 
         <!-- Sub-Tabs -->
         <div class="sub-tabs">
-            <button class="sub-tab-btn active" onclick="switchSubTab(event, 'sm-main')">📊 Strategy</button>
-            <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-calendar')">📅 Content Calendar</button>
+            <button class="sub-tab-btn active" onclick="switchSubTab(event, 'sm-calendar')">📅 Content Calendar</button>
             <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-growth')">🚀 Growth Playbook</button>
+            <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-blog')">✍️ Blog Engine</button>
+            <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-main')">📊 Strategy Reference</button>
         </div>
 
-        <!-- Tab 1: Strategy -->
-        <div id="sm-main" class="sub-tab-content active">
+        <!-- Tab 1: Calendar (Enhanced) -->
+        <div id="sm-calendar" class="sub-tab-content active">
+            <h2>📅 Week 1: Launch Week (Dec 16-22)</h2>
+            <div class="callout tip">
+                <strong>💡 Note:</strong> Use the Checkbox to mark tasks as done. Assign tasks to yourself or team
+                members.
+            </div>
+
+            <!-- Monday -->
+            <h3>🔴 Monday, December 16</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th width="30">✅</th>
+                            <th width="120">Time</th>
+                            <th width="100">Type</th>
+                            <th>Task / Content</th>
+                            <th width="140">Assignee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="task-m16-1">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-m16-1')"></td>
+                            <td><strong>08:30 AM</strong></td>
+                            <td><span class="badge growth">🚀 Growth</span></td>
+                            <td><strong>Reply Guy Sprint:</strong> Reply to 10 tweets searching for
+                                <code>"false positive security"</code> or <code>"snyk annoying"</code>. Be helpful!</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-m16-1', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                        <tr id="task-m16-2">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-m16-2')"></td>
+                            <td><strong>09:00 AM</strong></td>
+                            <td><span>🐦 Post</span></td>
+                            <td>🧵 <strong>Intro Thread:</strong> "🔮 Introducing Precogs AI: We PREDIC vulnerabilities
+                                vs finding patterns..."</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-m16-2', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                        <tr id="task-m16-3">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-m16-3')"></td>
+                            <td><strong>10:00 AM</strong></td>
+                            <td><span>💼 Post</span></td>
+                            <td><strong>LinkedIn Launch:</strong> "Excited to announce Precogs AI - AI-powered
+                                DevSecOps." Tag 3 CISOs.</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-m16-3', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                        <tr id="task-m16-4">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-m16-4')"></td>
+                            <td><strong>5:00 PM</strong></td>
+                            <td><span>🐦 Post</span></td>
+                            <td>"Security tip: 90% of data breaches start with code. How confident are assumed?"</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-m16-4', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tuesday -->
+            <h3>Tuesday, December 17</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th width="30">✅</th>
+                            <th width="120">Time</th>
+                            <th width="100">Type</th>
+                            <th>Task / Content</th>
+                            <th width="140">Assignee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="task-t17-1">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-t17-1')"></td>
+                            <td><strong>08:30 AM</strong></td>
+                            <td><span class="badge growth">🚀 Growth</span></td>
+                            <td><strong>Influencer Draft:</strong> Notifications ON for @troyhunt, @GossiTheDog. Reply
+                                within 10 mins of their post.</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-t17-1', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                        <tr id="task-t17-2">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-t17-2')"></td>
+                            <td><strong>09:00 AM</strong></td>
+                            <td><span>🐦 Post</span></td>
+                            <td>"🚨 SQL Injection is STILL #1. Logic flaws > Syntax errors. Here's why..."</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-t17-2', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                        <tr id="task-t17-3">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-t17-3')"></td>
+                            <td><strong>12:00 PM</strong></td>
+                            <td><span>🐦 Post</span></td>
+                            <td>[GIF Demo] "Watch AI predict a vulnerability before I even commit code."</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-t17-3', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Wednesday -->
+            <h3>Wednesday, December 18</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th width="30">✅</th>
+                            <th width="120">Time</th>
+                            <th width="100">Type</th>
+                            <th>Task / Content</th>
+                            <th width="140">Assignee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="task-w18-1">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-w18-1')"></td>
+                            <td><strong>08:30 AM</strong></td>
+                            <td><span class="badge growth">🚀 Growth</span></td>
+                            <td><strong>Competitor Stealth:</strong> Search <code>"CodeRabbit vs Snyk"</code>. Reply
+                                pitching Precogs as the AI-native alternative.</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-w18-1', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                        <tr id="task-w18-2">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-w18-2')"></td>
+                            <td><strong>09:00 AM</strong></td>
+                            <td><span>🐦 Post</span></td>
+                            <td>"SBOM generation in 60 seconds. Connect → Scan → Download. #SupplyChainSecurity"</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-w18-2', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                        <tr id="task-w18-3">
+                            <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('task-w18-3')"></td>
+                            <td><strong>3:00 PM</strong></td>
+                            <td><span>📺 Video</span></td>
+                            <td><strong>YouTube Upload:</strong> "Precogs AI Demo: GitHub to Security Report in 60
+                                Seconds"</td>
+                            <td><select class="assignee-select" onchange="updateAssignee('task-w18-3', this.value)">
+                                    <option>Unassigned</option>
+                                    <option>Rajnish</option>
+                                    <option>AI Agent</option>
+                                    <option>Team</option>
+                                </select></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 40px; text-align: center;">
+                <p><em>Calendar continues for Thu-Fri... (Add tasks dynamically using the ID pattern)</em></p>
+                <button class="btn btn-primary" onclick="alert('Feature coming soon: Add Custom Row')">+ Add
+                    Task</button>
+            </div>
+        </div>
+
+        <!-- Tab 2: Growth Playbook & AI -->
+        <div id="sm-growth" class="sub-tab-content">
+            <h2>🚀 Growth Engines</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h4>AI Growth Hacking</h4>
+                    <p>Using LLMs to scale engagement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h4>Reply Guy Engine</h4>
+                    <p>High-volume, high-value replies.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Trend Jacking</h4>
+                    <p>Drafting off breaking security news.</p>
+                </div>
+            </div>
+
+            <h3>🤖 How to Grow with AI (ChatGPT/Claude)</h3>
+            <div class="card">
+                <h4>1. Content Repurposing Engine</h4>
+                <p>Take one blog post and turn it into 10 tweets and 3 LinkedIn posts.</p>
+                <div class="code-block">
+                    <code><strong>Prompt:</strong> "Analyze this technical blog post about SQL Injection. Extract 5 counter-intuitive insights. Write 5 viral-style X threads (hook + insight + payoff). Maintain a 'Direct, Senior Engineer' tone. Avoid emojis in the middle of sentences."</code>
+                </div>
+
+                <h4>2. The "Argumentative" Bot Strategy</h4>
+                <p>Find a controversial take on X (e.g., "microservices are bad"). Use AI to draft a nuanced
+                    counter-argument.</p>
+                <div class="code-block">
+                    <code><strong>Prompt:</strong> "Here is a tweet arguing [X]. Draft a reply that agrees with the problem but offers [Y] as a better solution. Keep it under 240 chars. Be empathetic but authoritative."</code>
+                </div>
+
+                <h4>3. Automated Competitor Watch</h4>
+                <p>Use AI to summarize negative reviews of competitors (Snyk, Veracode) from G2/Reddit to find pain
+                    points to target.</p>
+            </div>
+
+            <h3>💬 The "Reply Guy" Target List</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Persona</th>
+                            <th>Target Accounts</th>
+                            <th>Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>The Thought Leaders</strong></td>
+                            <td>@troyhunt, @shanselman, @GossiTheDog</td>
+                            <td>Notifications ON. Reply early with a "Yes, and..." insight.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>The Practitioners</strong></td>
+                            <td>Search triggers: "snyk slow", "sonar false positive"</td>
+                            <td><strong>Empathy First:</strong> "I felt that pain. That's why we built
+                                intent-analysis..."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>The Builders</strong></td>
+                            <td>#IndieHackers, #BuildInPublic</td>
+                            <td>Celebrate their wins. "Congrats mainly! Did you check security on that new feature?"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>B. Traffic & Conversion Assets</h3>
+            <div class="checklist">
+                <label class="checkbox-item">
+                    <input type="checkbox" id="chk-bio" onchange="toggleChecklist('chk-bio')">
+                    <span><strong>Bio Optimization:</strong> "Predict vulnerabilities before they happen. 90% fewer
+                        false positives. Scan free 👇"</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="chk-pin" onchange="toggleChecklist('chk-pin')">
+                    <span><strong>Pinned Tweet Funnel:</strong> Hook + Social Proof + Demo GIF + CTA ("Try free")</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="chk-tool" onchange="toggleChecklist('chk-tool')">
+                    <span><strong>Engineering as Marketing:</strong> Build "Instant SBOM Generator" (No login required
+                        version).</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Tab 3: Blog Engine -->
+        <div id="sm-blog" class="sub-tab-content">
+            <h2>✍️ Blog Engine & Content Pipeline</h2>
+
+            <div class="callout success">
+                <strong>Goal:</strong> Publish 1 high-quality "Engineering Brand" piece per week. Share across
+                HackerNews, Reddit, and X.
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th width="30">Status</th>
+                            <th>Topic / Title</th>
+                            <th>Angle/Hook</th>
+                            <th>Assignee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span
+                                    style="background:#dbeafe; color:#1e40af; padding:2px 8px; border-radius:4px;">Drafting</span>
+                            </td>
+                            <td><strong>The End of Pattern Matching</strong></td>
+                            <td>"Why Regex-based SAST is dead in the age of AI Agents." (Controversial, Technical)</td>
+                            <td><select class="assignee-select">
+                                    <option>Rajnish</option>
+                                    <option>AI</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td><span
+                                    style="background:#fce7f3; color:#9d174d; padding:2px 8px; border-radius:4px;">Research</span>
+                            </td>
+                            <td><strong>CVE-2024-XXXX Analysis</strong></td>
+                            <td>Deep dive into a recent major breach. Show how Precogs would have caught it. (Timely)
+                            </td>
+                            <td><select class="assignee-select">
+                                    <option>Rajnish</option>
+                                    <option>AI</option>
+                                </select></td>
+                        </tr>
+                        <tr>
+                            <td><span
+                                    style="background:#ecfccb; color:#3f6212; padding:2px 8px; border-radius:4px;">Planned</span>
+                            </td>
+                            <td><strong>Secure Your Weekend Project</strong></td>
+                            <td>"5 Minutes to DevSecOps." practical guide for Indie Hackers. (SEO Friendly)</td>
+                            <td><select class="assignee-select">
+                                    <option>Team</option>
+                                    <option>AI</option>
+                                </select></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Detailed Topic Outlines</h3>
+
+            <div class="card">
+                <h4>1. The End of Pattern Matching: Why Intent Analysis Wins</h4>
+                <ul>
+                    <li><strong>Hook:</strong> Show a code snippet that looks safe to Regex but is vulnerable (Logic
+                        Bomb).</li>
+                    <li><strong>Core Argument:</strong> Traditional SAST = Spellcheck. AI SAST = Reading Comprehension.
+                    </li>
+                    <li><strong>Proof:</strong> Show Precogs finding a vulnerability based on variable naming context.
+                    </li>
+                    <li><strong>CTA:</strong> "Stop grepping your code. Start understanding it."</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h4>2. How to Secure Your Weekend Project (Indie Hacker Guide)</h4>
+                <ul>
+                    <li><strong>Hook:</strong> "You shipped. It's growing. But one SQL Injection could kill it today."
+                    </li>
+                    <li><strong>Steps:</strong> 1. Add Precogs Action. 2. Verify dependencies (Dependabot). 3. Header
+                        security.</li>
+                    <li><strong>Resources:</strong> Free template for secure Next.js headers.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab 4: Strategy Reference (Legacy) -->
+        <div id="sm-main" class="sub-tab-content">
             <h2>Competitor Landscape</h2>
             <div class="table-container">
                 <table class="data-table">
                     <thead>
                         <tr>
                             <th>Competitor</th>
-                            <th>X (Twitter)</th>
-                            <th>LinkedIn</th>
                             <th>Key Strength</th>
+                            <th>Our Counter-Move</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>Snyk</strong></td>
-                            <td>@snyksec (Very Active)</td>
-                            <td>100K+ followers</td>
-                            <td>Developer community, OSS focus</td>
+                            <td>Developer Reach</td>
+                            <td>"Less Noise, More Fixing" (Focus on False Positive fatigue)</td>
                         </tr>
                         <tr>
                             <td><strong>CodeRabbit</strong></td>
-                            <td>Active (Growing)</td>
-                            <td>10K+ followers</td>
-                            <td>AI demos, playful engagement</td>
+                            <td>AI Hype</td>
+                            <td>"Security First, not just Code Review."</td>
                         </tr>
                         <tr>
                             <td><strong>Aikido</strong></td>
-                            <td>@AikidoSec</td>
-                            <td>Growing</td>
-                            <td>Startup authenticity</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Veracode</strong></td>
-                            <td>Active</td>
-                            <td>50K+ followers</td>
-                            <td>Enterprise thought leadership</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Checkmarx</strong></td>
-                            <td>Active</td>
-                            <td>40K+ followers</td>
-                            <td>Gartner recognition</td>
+                            <td>No-Nonsense</td>
+                            <td>"The AI Advantage" (Predictive analysis)</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <h2>Platform Strategy</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🐦</div>
-                    <h4>X (Twitter)</h4>
-                    <p>Primary. Real-time engagement, developer conversations, tech news.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💼</div>
-                    <h4>LinkedIn</h4>
-                    <p>B2B focus. Enterprise decision-makers, thought leadership.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📺</div>
-                    <h4>YouTube</h4>
-                    <p>Product demos, tutorials, security deep dives.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🐙</div>
-                    <h4>GitHub</h4>
-                    <p>Technical credibility, open source contributions.</p>
-                </div>
-            </div>
-
-            <h2>Content Pillars</h2>
-            <ul>
-                <li><strong>🔒 AI Security Insights:</strong> Vulnerability analysis, CVE deep dives</li>
-                <li><strong>🔍 Vulnerability Intelligence:</strong> Weekly threat roundups</li>
-                <li><strong>✅ Compliance Made Easy:</strong> ISO 27001, SOC2, PCI DSS tips</li>
-                <li><strong>💻 Developer Experience:</strong> Integration guides, best practices</li>
-            </ul>
-
-            <h2>Posting Frequency</h2>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Platform</th>
-                            <th>Frequency</th>
-                            <th>Best Times (GMT)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>X (Twitter)</td>
-                            <td>2-3x daily</td>
-                            <td>9AM, 12PM, 5PM</td>
-                        </tr>
-                        <tr>
-                            <td>LinkedIn</td>
-                            <td>5x weekly</td>
-                            <td>8-10AM, 12PM</td>
-                        </tr>
-                        <tr>
-                            <td>YouTube</td>
-                            <td>4x monthly</td>
-                            <td>2-4PM weekdays</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Tab 2: Calendar -->
-        <div id="sm-calendar" class="sub-tab-content">
-            <h2>📅 Week 1: Launch Week (Dec 16-22)</h2>
-
-            <h3>🔴 Monday, December 16 (START!)</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>Platform</th>
-                            <th>Post</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>9:00 AM</strong></td>
-                            <td>X</td>
-                            <td>🧵 Introduction Thread: "🔮 Introducing Precogs AI: We don't just find
-                                vulnerabilities—we PREDICT them..."</td>
-                        </tr>
-                        <tr>
-                            <td><strong>10:00 AM</strong></td>
-                            <td>LinkedIn</td>
-                            <td>"We're excited to announce Precogs AI - AI-powered DevSecOps platform..."</td>
-                        </tr>
-                        <tr>
-                            <td><strong>5:00 PM</strong></td>
-                            <td>X</td>
-                            <td>"Security tip: 90% of data breaches start with a code vulnerability. How confident are
-                                you? 🤔"</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>Tuesday, December 17</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>Platform</th>
-                            <th>Post</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>9:00 AM</strong></td>
-                            <td>X</td>
-                            <td>"🚨 SQL Injection is STILL #1 in 2024. Here's what most scanners miss... 🧵"</td>
-                        </tr>
-                        <tr>
-                            <td><strong>9:00 AM</strong></td>
-                            <td>LinkedIn</td>
-                            <td>"84% of codebases contain at least one vulnerability (Snyk). Precogs AI takes a
-                                predictive approach..."</td>
-                        </tr>
-                        <tr>
-                            <td><strong>12:00 PM</strong></td>
-                            <td>X</td>
-                            <td>[GIF] "How does AI-powered security actually work? Precogs understands what your code is
-                                TRYING to do."</td>
-                        </tr>
-                        <tr>
-                            <td><strong>5:00 PM</strong></td>
-                            <td>X</td>
-                            <td>Poll: "Biggest DevSecOps challenge? 1. False positives 2. Slow scans 3. Integration 4.
-                                Compliance"</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>Wednesday, December 18</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>Platform</th>
-                            <th>Post</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>9:00 AM</strong></td>
-                            <td>X</td>
-                            <td>"SBOM generation shouldn't take a week. With Precogs AI: 1️⃣ Connect 2️⃣ Scan 3️⃣
-                                Download. That's it! #SBOM"</td>
-                        </tr>
-                        <tr>
-                            <td><strong>10:00 AM</strong></td>
-                            <td>LinkedIn</td>
-                            <td>"How AI-powered scanning reduces false positives by 90%..."</td>
-                        </tr>
-                        <tr>
-                            <td><strong>3:00 PM</strong></td>
-                            <td>YouTube</td>
-                            <td>🎬 "Precogs AI Demo: GitHub to Security Report in 60 Seconds"</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>Thursday, December 19</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>Platform</th>
-                            <th>Post</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>9:00 AM</strong></td>
-                            <td>X</td>
-                            <td>"🧵 5 Most Overlooked Vulnerability Types: 1/ IDOR - requires understanding business
-                                logic..."</td>
-                        </tr>
-                        <tr>
-                            <td><strong>12:00 PM</strong></td>
-                            <td>X</td>
-                            <td>"Pattern matching vs AI: 🔴 Regex looks for syntax 🟢 Precogs understands data flow 🔮"
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>5:00 PM</strong></td>
-                            <td>X</td>
-                            <td>"Shoutout to everyone who tried Precogs AI this week! 🎉 What feature would help most?"
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3>Friday, December 20</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>Platform</th>
-                            <th>Post</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>9:00 AM</strong></td>
-                            <td>X</td>
-                            <td>"📰 This week in AppSec: • Critical JS vulnerabilities • Supply chain attacks rising •
-                                CISA KEV updates"</td>
-                        </tr>
-                        <tr>
-                            <td><strong>10:00 AM</strong></td>
-                            <td>LinkedIn</td>
-                            <td>"Week 1 at Precogs AI: ✅ Launched ✅ Connected with security pros ✅ Incredible feedback!"
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>12:00 PM</strong></td>
-                            <td>X</td>
-                            <td>"POV: Your scanner finally stops crying wolf 🐺 [Meme] Happy Friday! #FridayVibes"</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h2>📅 Week 2: Holiday Edition (Dec 21-27)</h2>
-            <p>Reduced posting during holidays. Focus on year-end reviews and 2025 predictions.</p>
-
-            <h2>📅 Week 3: New Year (Dec 28 - Jan 3)</h2>
-            <p>Security resolutions, 2025 roadmap preview, and fresh start messaging.</p>
-
-            <div class="callout success">
-                <strong>✅ Ready to post!</strong> Copy the content above directly to X, LinkedIn, or schedule with
-                Buffer/Hootsuite.
-            </div>
-        </div>
-
-        <!-- Tab 3: Growth -->
-        <div id="sm-growth" class="sub-tab-content">
-            <h2>🚀 Growth & Follower Playbook</h2>
-
-            <h3>A. How to Get First 1,000 Followers</h3>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h4>The "Reply Guy" Strategy</h4>
-                    <p><strong>Goal:</strong> 10 replies/day</p>
-                    <p>Search: <code>"snyk false positive"</code>, <code>"sonar noise"</code></p>
-                    <p>Reply with empathy + value, not just links.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h4>Smart Following</h4>
-                    <p>Follow 20-30 active accounts/day.</p>
-                    <p>Target: <code>@snyksec</code>, <code>@OWASP</code> followers.</p>
-                    <p>Look for "CTO", "Pentester" in bios.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔔</div>
-                    <h4>Influencer Hijacking</h4>
-                    <p>Notifications ON for key influencers.</p>
-                    <p>Reply within 15 mins to draft off their reach.</p>
-                </div>
-            </div>
-
-            <h3>B. Traffic & Conversion</h3>
-            <div class="checklist">
-                <label class="checkbox-item">
-                    <input type="checkbox">
-                    <span><strong>Bio Optimization:</strong> "Predict vulnerabilities before they happen. 90% fewer
-                        false positives. Scan free 👇"</span>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox">
-                    <span><strong>Pinned Tweet Funnel:</strong> Hook + Social Proof + Demo GIF + CTA ("Try free")</span>
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox">
-                    <span><strong>Engineering as Marketing:</strong> Build a tiny free tool (e.g. "Instant SBOM
-                        Generator") to attract users.</span>
-                </label>
-            </div>
-
-            <h3>C. Engagement Hacks</h3>
-            <ul>
-                <li><strong>Build in Public:</strong> Share YOUR bugs and how you fixed them. Devs trust transparency.
-                </li>
-                <li><strong>Polls:</strong> "Tabs vs Spaces", "Worst bug ever?" (Low friction = high engagement).</li>
-                <li><strong>Controversial Takes:</strong> "Legacy SAST is dead", "Regex isn't security". (Arguments =
-                    Visibility).</li>
-            </ul>
         </div>
 
     </div>
@@ -812,11 +920,79 @@
     </footer>
 
     <script>
+        // Tab Switching
         function switchSubTab(event, tabId) {
             document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
             event.currentTarget.classList.add('active');
             document.querySelectorAll('.sub-tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
+        }
+
+        // Task & State Management
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTaskStates();
+            loadAssignees();
+            loadChecklist();
+        });
+
+        function toggleTask(id) {
+            const row = document.getElementById(id);
+            const checkbox = row.querySelector('.task-checkbox');
+
+            if (checkbox.checked) {
+                row.classList.add('completed-row');
+            } else {
+                row.classList.remove('completed-row');
+            }
+
+            // Save to localStorage
+            const tasks = JSON.parse(localStorage.getItem('precogs_sm_tasks') || '{}');
+            tasks[id] = checkbox.checked;
+            localStorage.setItem('precogs_sm_tasks', JSON.stringify(tasks));
+        }
+
+        function updateAssignee(id, value) {
+            const assignees = JSON.parse(localStorage.getItem('precogs_sm_assignees') || '{}');
+            assignees[id] = value;
+            localStorage.setItem('precogs_sm_assignees', JSON.stringify(assignees));
+        }
+
+        function toggleChecklist(id) {
+            const checklist = JSON.parse(localStorage.getItem('precogs_sm_checklist') || '{}');
+            const el = document.getElementById(id);
+            checklist[id] = el.checked;
+            localStorage.setItem('precogs_sm_checklist', JSON.stringify(checklist));
+        }
+
+        function loadTaskStates() {
+            const tasks = JSON.parse(localStorage.getItem('precogs_sm_tasks') || '{}');
+            for (const [id, isChecked] of Object.entries(tasks)) {
+                const row = document.getElementById(id);
+                if (row) {
+                    const checkbox = row.querySelector('.task-checkbox');
+                    checkbox.checked = isChecked;
+                    if (isChecked) row.classList.add('completed-row');
+                }
+            }
+        }
+
+        function loadAssignees() {
+            const assignees = JSON.parse(localStorage.getItem('precogs_sm_assignees') || '{}');
+            for (const [id, value] of Object.entries(assignees)) {
+                const row = document.getElementById(id);
+                if (row) {
+                    const select = row.querySelector('.assignee-select');
+                    if (select) select.value = value;
+                }
+            }
+        }
+
+        function loadChecklist() {
+            const checklist = JSON.parse(localStorage.getItem('precogs_sm_checklist') || '{}');
+            for (const [id, isChecked] of Object.entries(checklist)) {
+                const el = document.getElementById(id);
+                if (el) el.checked = isChecked;
+            }
         }
     </script>
 
