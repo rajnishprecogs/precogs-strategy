@@ -209,47 +209,256 @@ If not already created, establish a LinkedIn company page:
 
 ---
 
-## 7. Content Calendar Template (Monthly)
+## 7. Full Content Calendar (Dec 14 - Jan 3, 2026)
 
-### Week 1: "Awareness Week"
+**Start Date:** December 14, 2025 (TODAY!)  
+**Timezone:** GMT (London)  
+**Account:** [@precogs_ai](https://x.com/precogs_ai)
 
-| Date | Platform | Content |
+### 🎯 Quick Reference: Posting Times (GMT)
+
+| Platform | Best Days | Best Times | Posts/Day |
+| :--- | :--- | :--- | :---: |
+| **X (Twitter)** | Mon-Fri | 9:00 AM, 12:00 PM, 5:00 PM | 2-3 |
+| **LinkedIn** | Tue-Thu | 8:00-10:00 AM, 12:00 PM | 1 |
+| **YouTube** | Tue, Wed | 2:00-4:00 PM | 1/week |
+
+---
+
+### 📆 WEEK 1: "LAUNCH WEEK" (Dec 14-20, 2025)
+
+#### 🔴 Saturday, December 14 (TODAY!)
+
+| Time (GMT) | Platform | Content Type | Post |
+| :--- | :--- | :--- | :--- |
+| ASAP | X | 🔧 Account Fix | **Check account settings - your 8 posts aren't showing publicly. Go to Settings → Privacy → Uncheck "Protect your posts"** |
+| 10:00 AM | X | 🚀 Weekend Launch | **"🔮 Weekend project: Try scanning your repo with AI-powered security. Precogs AI doesn't just find vulnerabilities—we PREDICT them before they become exploits. Free for open source: precogs.ai #DevSecOps #WeekendCoding"** |
+| 12:00 PM | X | 💡 Tip | "Security tip for your weekend coding: Before you push that side project, run a quick security scan. You'd be surprised what dependencies bring in. 🔍 #OpenSource #AppSec" |
+| 3:00 PM | X | 📊 Poll | "Weekend poll: How often do you scan your personal/side projects for vulnerabilities? 🗳️ 1. Every commit 2. Before releases 3. Occasionally 4. Wait, I should do that? 😅 #DevSecOps" |
+
+#### Sunday, December 15
+
+| Time (GMT) | Platform | Content Type | Post |
+| :--- | :--- | :--- | :--- |
+| 11:00 AM | X | 📚 Sunday Read | **"Sunday reading: The average time from vulnerability disclosure to exploit is now just 15 days. Is your security keeping up? 📖 Here's how AI-powered scanning changes the game... 🧵"** |
+| 3:00 PM | X | 🔮 Preview | "This week on @precogs_ai: • Full product demos • CVE deep dives • Compliance tips • And our first YouTube video! Follow along 🔮✨ #DevSecOps" |
+
+#### Monday, December 16
+
+| Time (GMT) | Platform | Content Type | Post |
+| :--- | :--- | :--- | :--- |
+| 9:00 AM | X | 🚀 Introduction Thread | **"🔮 Introducing Precogs AI: We don't just find vulnerabilities—we PREDICT them before they become exploits. AI-powered security that sees the future of your code. 🧵 Thread below ⬇️"** |
+| 9:05 AM | X | Thread 1/5 | "1/ Traditional SAST tools pattern match. They look for known bad patterns. But what about the vulnerabilities that don't match any pattern yet?" |
+| 9:06 AM | X | Thread 2/5 | "2/ Precogs AI uses Gemini to understand CODE INTENT. We analyze what your code is trying to do, not just what it looks like." |
+| 9:07 AM | X | Thread 3/5 | "3/ Result? We catch logic flaws, business logic vulnerabilities, and zero-days that traditional scanners miss entirely." |
+| 9:08 AM | X | Thread 4/5 | "4/ Plus: Automatic SBOM generation + real-time compliance mapping (ISO 27001, SOC2, GDPR) from a SINGLE scan." |
+| 9:09 AM | X | Thread 5/5 | "5/ Try it free on your GitHub repos today: precogs.ai 🔮✨ #DevSecOps #AppSec #AIinSecurity" |
+| 10:00 AM | LinkedIn | 🏢 Company Intro | **"We're excited to announce Precogs AI - a next-generation AI-powered DevSecOps platform. While traditional security tools look for known patterns, we use advanced AI to predict vulnerabilities before they manifest. ✅ AI-verified vulnerabilities (90% less noise) ✅ Automatic SBOM generation ✅ One-click compliance reporting Try free: precogs.ai"** |
+| 5:00 PM | X | 💡 Tip | "Security tip: 90% of data breaches start with a code vulnerability. How confident are you in your current scanning? 🤔 #AppSec" |
+
+#### Tuesday, December 17
+
+| Time (GMT) | Platform | Content Type | Post |
+| :--- | :--- | :--- | :--- |
+| 9:00 AM | X | 🔍 Vulnerability | **"🚨 SQL Injection is STILL the #1 web vulnerability in 2024. Here's what most scanners miss: Prepared statements aren't enough if you're concatenating in ORDER BY clauses. Let's dive in 🧵"** |
+| 9:00 AM | LinkedIn | 📊 Industry Insight | **"According to Snyk's State of Open Source Security, 84% of codebases contain at least one vulnerability. The question isn't IF you have vulnerabilities—it's whether you can find them before attackers do. At Precogs AI, we're taking a predictive approach..."** |
+| 12:00 PM | X | 🤖 AI Feature | "[GIF showing code analysis] How does AI-powered security actually work? Precogs AI doesn't regex match—it understands what your code is TRYING to do. That's why we catch what others miss." |
+| 5:00 PM | X | 📊 Poll | "What's your biggest DevSecOps challenge? 🗳️ 1. Too many false positives 2. Slow scan times 3. Integration headaches 4. Compliance reporting" |
+
+#### Wednesday, December 18
+
+| Time (GMT) | Platform | Content Type | Post |
+| :--- | :--- | :--- | :--- |
+| 9:00 AM | X | ✅ Compliance | **"SBOM generation shouldn't take a week. With Precogs AI: 1️⃣ Connect your repo 2️⃣ Run a scan 3️⃣ Download your SBOM That's it. CycloneDX and SPDX formats supported. Try it: precogs.ai #SBOM #SupplyChainSecurity"** |
+| 10:00 AM | LinkedIn | 🎯 Use Case | **"How AI-powered scanning reduces false positives by 90%: Traditional SAST tools flag everything that LOOKS dangerous. Precogs AI verifies what IS dangerous by understanding code context and intent. Your security team focuses on real issues, not noise."** |
+| 12:00 PM | X | 🔗 Integration | "[GIF] Watch us scan a GitHub repo in under 60 seconds. 2 lines of YAML = full security coverage. No complex setup. No maintenance headaches. #GitHubActions #DevSecOps" |
+| 3:00 PM | YouTube | 🎬 Demo Video | **"Precogs AI Product Demo: From GitHub to Security Report in 60 Seconds"** - Full walkthrough |
+| 5:00 PM | X | 💬 Engagement | "What security tool integrations do you need most? Reply below 👇 We're building our roadmap based on YOUR input! #DevSecOps" |
+
+#### Thursday, December 19
+
+| Time (GMT) | Platform | Content Type | Post |
+| :--- | :--- | :--- | :--- |
+| 9:00 AM | X | 🔍 Deep Dive Thread | **"🧵 The 5 Most Overlooked Vulnerability Types: 1/ IDOR (Insecure Direct Object Reference) - Most scanners can't catch this because it requires understanding business logic. Precogs AI can. Here's how..."** |
+| 9:00 AM | LinkedIn | 🏆 Thought Leadership | **"The future of application security isn't more rules—it's smarter analysis. At Precogs AI, we believe security tools must understand code the way developers do: contextually, holistically, and intelligently."** |
+| 12:00 PM | X | 🆚 Comparison | "Pattern matching vs AI understanding: 🔴 Regex: looks for 'SELECT * FROM users WHERE id=' 🟢 Precogs AI: understands data flow from user input to database query Which catches more vulnerabilities? 🔮" |
+| 5:00 PM | X | 🎉 Community | "Shoutout to everyone who tried Precogs AI this week! 🎉 Your feedback is incredible. Keep it coming—what feature would make your life easier? Drop it below 👇" |
+
+#### Friday, December 20
+
+| Time (GMT) | Platform | Content Type | Post |
+| :--- | :--- | :--- | :--- |
+| 9:00 AM | X | 📰 Week in Security | **"📰 This week in AppSec: • Critical vulnerabilities in popular JS libraries • Supply chain attacks continue to rise • CISA updates KEV catalog What are you doing to stay ahead? 🔮 #WeekInSecurity #AppSec"** |
+| 10:00 AM | LinkedIn | 📈 Weekly Wrap | **"Week 1 at Precogs AI: ✅ Launched our AI-powered security platform ✅ Connected with amazing security professionals ✅ Received incredible community feedback Next week: More features, more demos, more security insights!"** |
+| 12:00 PM | X | 😄 Fun Friday | "POV: Your security scanner finally stops crying wolf 🐺 [Meme] Happy Friday! #FridayVibes #DevSecOps" |
+| 5:00 PM | X | 🔮 Weekend Thought | "Weekend thought: What if your security scanner could tell you WHY code is vulnerable, not just THAT it is? That's the Precogs AI difference. 🔮 Have a great weekend! ✨" |
+
+---
+
+### 📆 WEEK 2: "HOLIDAY EDITION" (Dec 21-27, 2025)
+
+#### Saturday, December 21
+
+| Time (GMT) | Platform | Post |
 | :--- | :--- | :--- |
-| Mon | X, LinkedIn | Educational: "5 vulnerabilities AI catches that SAST misses" |
-| Tue | X | Vulnerability spotlight |
-| Wed | X, LinkedIn | Product feature highlight |
-| Thu | X | Community poll |
-| Fri | LinkedIn | Industry news roundup |
+| 11:00 AM | X | "Weekend security reminder: Before you go on holiday, make sure your CI/CD pipeline is still watching over your code. Set it and forget it. 🔮 #DevSecOps" |
 
-### Week 2: "Product Week"
+#### Sunday, December 22
 
-| Date | Platform | Content |
+| Time (GMT) | Platform | Post |
 | :--- | :--- | :--- |
-| Mon | X, YouTube | Demo video: GitHub integration |
-| Tue | X, LinkedIn | Customer story/testimonial |
-| Wed | X | Technical tip |
-| Thu | X, LinkedIn | Before/After scan comparison |
-| Fri | X | Fun Friday security meme |
+| 12:00 PM | X | "This week: Our 2024 AppSec Year in Review + 2025 predictions. Plus some holiday-themed security content 🎄🔮 What topics do you want us to cover in 2025?" |
 
-### Week 3: "Thought Leadership Week"
+#### Monday, December 23
 
-| Date | Platform | Content |
+| Time (GMT) | Platform | Post |
 | :--- | :--- | :--- |
-| Mon | LinkedIn | Long-form article on AI in security |
-| Tue | X | Thread on compliance best practices |
-| Wed | X, LinkedIn | Interview/Q&A with security expert |
-| Thu | X | Industry news commentary |
-| Fri | X | Community shoutouts |
+| 9:00 AM | X | **"🔮 2024 AppSec Year in Review 🧵 1/ Supply chain attacks: UP 200% 2/ AI-generated code vulnerabilities: NEW category 3/ Average breach cost: $4.88M (IBM) 4/ Mean time to detect: Still too long"** |
+| 9:00 AM | LinkedIn | **"The DevSecOps Maturity Model: Year-End Assessment. Where does your org fall? Here's how to level up in 2025..."** |
+| 12:00 PM | X | "Holiday security tip: Freeze your dependencies before the break. No compromised supply chains! 🎄❄️" |
+| 5:00 PM | X | Poll: "2024 security wins: Which did you achieve? 1. Reduced false positives 2. Faster scan times 3. Better compliance 4. All 🎉" |
 
-### Week 4: "Community Week"
+#### Tuesday, December 24 (Christmas Eve)
 
-| Date | Platform | Content |
+| Time (GMT) | Platform | Post |
 | :--- | :--- | :--- |
-| Mon | X | User spotlight |
-| Tue | X, LinkedIn | Poll or survey |
-| Wed | X | Behind-the-scenes team content |
-| Thu | YouTube | Monthly product update video |
-| Fri | X, LinkedIn | Monthly metrics/achievements |
+| 9:00 AM | X | **"🎄 'Twas the night before Christmas, and all through the code, Not a vulnerability stirred, thanks to AI that showed... Happy holidays from Precogs AI! 🔮✨"** |
+| 10:00 AM | LinkedIn | **"Wishing all security professionals a safe and secure holiday season! 🎄"** |
+| 12:00 PM | X | "Holiday gift: Precogs AI is FREE for open source projects. 🎁 precogs.ai" |
+
+#### Wednesday, December 25 (Christmas Day)
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 12:00 PM | X | "Merry Christmas to those celebrating! 🎄🔮 Rest up—2025 is going to be big! #MerryChristmas" |
+
+#### Thursday, December 26 (Boxing Day)
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 9:00 AM | X | **"🔮 2025 AppSec Predictions: 1/ AI-generated code = new vulnerability categories 2/ SBOM mandates expand globally 3/ Traditional SAST becomes obsolete 4/ 'Shift everywhere' replaces 'shift left'"** |
+| 12:00 PM | X | "Post-holiday question: What's the FIRST security task on your 2025 list?" |
+| 5:00 PM | X | "Need post-holiday reading? Check out precogs.ai/blog 📖" |
+
+#### Friday, December 27
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 9:00 AM | X | **"📖 Essential 2025 reading: 1. OWASP Top 10 2. NIST Framework 2.0 3. DevSecOps Manifesto 4. Our blog 😉"** |
+| 10:00 AM | LinkedIn | **"2025 Security Planning: Three questions every CISO should ask..."** |
+| 12:00 PM | X | "[GIF] Precogs AI suggests FIXES, not just 'use prepared statements.' See it 👇" |
+| 5:00 PM | X | "Year-end security cleanup? 🧹 Dependencies updated ✅ Vulnerabilities patched ✅ Ready for 2025 ✅" |
+
+---
+
+### 📆 WEEK 3: "NEW YEAR, NEW SECURITY" (Dec 28 - Jan 3, 2026)
+
+#### Saturday, December 28
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 12:00 PM | X | "Weekend thought: The best security is invisible to developers. No friction, no slowdowns. 🔮" |
+
+#### Sunday, December 29
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 3:00 PM | X | "New Year's week! 🎉 Security resolutions, roadmap preview, first demo of the new year. Let's make 2025 proactive! 🔮" |
+
+#### Monday, December 30
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 9:00 AM | X | **"🧵 Security Resolutions for 2025: 1/ Stop ignoring the vulnerability backlog 2/ Generate SBOMs for EVERY project..."** |
+| 10:00 AM | LinkedIn | **"2025 Predictions from Precogs AI: The security landscape is evolving faster than ever..."** |
+| 12:00 PM | X | "Stat: 60% of breaches involve vulnerabilities where a patch was available. Your 2025 resolution: Faster remediation. 🎯" |
+| 5:00 PM | X | "What's YOUR security resolution for 2025? We'll start: 10x more AI detection capabilities. 👇" |
+
+#### Tuesday, December 31 (New Year's Eve)
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 9:00 AM | X | **"Precogs AI 2024: ✅ Launched November ✅ 361+ followers in month 1 ✅ 10+ languages ✅ One mission: Predict vulnerabilities. Thank you! 🎉"** |
+| 10:00 AM | LinkedIn | **"Thank you for supporting Precogs AI's launch. Here's to a secure 2025! 🎉"** |
+| 12:00 PM | X | "From our team to yours: Here's to a more secure 2025! 🥂🔮✨ #HappyNewYear" |
+
+#### Wednesday, January 1, 2026 (New Year's Day)
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 12:00 PM | X | "Happy New Year! 🎊🔮 New year, new vulnerabilities to predict and prevent. Ready when you are! #2025" |
+
+#### Thursday, January 2
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 9:00 AM | X | **"First day back ☕ Let's make 2025 the year of PROACTIVE security. precogs.ai 🔮"** |
+| 9:00 AM | LinkedIn | **"2025 Goals for Precogs AI: ✅ Expand AI detection ✅ More compliance frameworks ✅ Deeper IDE integrations ✅ Help 10,000+ developers"** |
+| 12:00 PM | X | "New year tip: Before writing new code, scan what you have. 🔍 #NewYearNewScan" |
+| 5:00 PM | X | Poll: "First security task of 2025? 1. Full scan 2. Review backlog 3. Update deps 4. Coffee first ☕" |
+
+#### Friday, January 3
+
+| Time (GMT) | Platform | Post |
+| :--- | :--- | :--- |
+| 9:00 AM | X | **"🧵 Top 5 Vulnerability Types to Watch in 2025: 1/ AI-Generated Code Flaws 2/ Supply Chain Attacks 3/ API Security..."** |
+| 10:00 AM | LinkedIn | **"Top 5 Security Trends for 2025: 1. AI-powered security 2. Runtime protection 3. Supply chain 4. Cloud-native 5. Developer-first"** |
+| 12:00 PM | X | "[GIF] Compliance reports: ISO 27001 + SOC2 + PCI DSS. One scan = three reports. 🔮" |
+| 5:00 PM | X | "First Friday of 2025! 🎉 Caught a vulnerability this week? Great sign! If not... precogs.ai 😉" |
+
+---
+
+### 🏷️ Hashtag Guide
+
+**Every Post (Pick 2-3):** #DevSecOps #AppSec #Cybersecurity
+
+**Topic-Specific:**
+- #SBOM - Software bills of materials
+- #CVE - Specific vulnerabilities  
+- #SecureCoding - Developer tips
+- #SupplyChainSecurity - Dependencies
+
+**Brand:** #PrecogsAI #PrecognitiveSecurity
+
+---
+
+### 📝 Copy-Paste Posts for TODAY (Dec 14)
+
+**Post 1 - Right Now:**
+```
+🔮 Weekend project: Try scanning your repo with AI-powered security.
+
+Precogs AI doesn't just find vulnerabilities—we PREDICT them before they become exploits.
+
+✅ Free for open source
+✅ 60-second setup
+✅ AI-verified results
+
+Try it: precogs.ai
+
+#DevSecOps #WeekendCoding
+```
+
+**Post 2 - Noon:**
+```
+Security tip for your weekend coding: Before you push that side project, run a quick security scan.
+
+You'd be surprised what dependencies bring in. 🔍
+
+#OpenSource #AppSec #SecureCoding
+```
+
+**Post 3 - 3PM Poll:**
+```
+Weekend poll: How often do you scan your personal/side projects for vulnerabilities? 🗳️
+
+1. Every commit
+2. Before releases  
+3. Occasionally
+4. Wait, I should do that? 😅
+
+#DevSecOps
+```
 
 ---
 
