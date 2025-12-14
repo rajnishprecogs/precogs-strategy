@@ -462,7 +462,71 @@ Weekend poll: How often do you scan your personal/side projects for vulnerabilit
 
 ---
 
-## 8. Key Metrics to Track
+## 8. Growth & Follower Acquisition Playbook (New!)
+
+### A. How to Get Your First 1,000 Followers (The "Ground Game")
+
+Growth on X/LinkedIn doesn't happen by just posting. You must engage.
+
+1.  **The "Value-Add Reply" Strategy (Daily Task)**
+    *   **Do not** just post and wait.
+    *   **Search** for keywords: `"snyk false positive"`, `"sonar noise"`, `"vulnerability scan slow"`, `"github action security fail"`.
+    *   **Reply** with empathy + insight.
+        *   *Bad:* "Check out Precogs AI, it's better."
+        *   *Good:* "That false positive is painful. It's usually because regex matches 'user' blindly. We solved this by using AI to check code intent to see if input is actually sanitized. Happy to show you if you're interested."
+    *   **Goal:** 10 replies/day.
+
+2.  **Smart Following**
+    *   Follow **20-30 accounts/day** who are *active* in #DevSecOps.
+    *   **Target:** Look at followers of `@snyksec`, `@TruffleSecurity`, or `@OWASP` who have tweeted in the last week.
+    *   **Filter:** Look for "Software Engineer", "CTO", "Pentester" in bios. Avoid bot-looking accounts.
+
+3.  **Influencer "Hijacking" (Ethical)**
+    *   Turn on notifications 🔔 for key influencers (e.g., Gergely Orosz `@GergelyOrosz`, specialized security researchers).
+    *   Reply *early* (within 15 mins) with a smart, additive comment.
+    *   *Result:* Your profile gets seen by their thousands of followers.
+
+### B. Traffic & Signups (Conversion Optimization)
+
+1.  **The "Bio" Funnel**
+    *   **Current Bio:** "AI-powered next-generation code security platform" (A bit generic).
+    *   **Better Bio:** "Predict vulnerabilities before they happen. 90% fewer false positives. Scan your repo free 👇"
+    *   **The Link:** Use a tracked link e.g., `precogs.ai?ref=twitter_bio` to measure where signups come from.
+
+2.  **The "Pinned Tweet" Landing Page**
+    *   Your pinned tweet is your landing page on X. It must sell.
+    *   **Structure:**
+        1.  **Hook:** "Stop wasting time on false positives."
+        2.  **Social Proof:** "Trusted by early adopters."
+        3.  **Demo:** A 10-second GIF showing a scan finding a bug fast.
+        4.  **CTA:** "Try free on your repo: [link]"
+        5.  **Offer:** "Free for open source forever."
+
+3.  **"Engineering as Marketing"**
+    *   Build a tiny free tool (e.g., "Instant SBOM Generator" or "Header Checker").
+    *   Share *that* instead of just the main product. "I built a free tool to generate SBOMs in 30 seconds. No signup needed."
+    *   *Then* upsell the full scan on the results page.
+
+### C. Engagement Hacks
+
+1.  **"Build in Public"**
+    *   Devs trust devs. Share screenshots of *your* code, *your* bugs, *your* roadmap.
+    *   *Post Idea:* "Just fixed a crazy bug in our AI logic where it thought 'password' in a comment was a leak. Here's how we trained it to know the difference... #buildinpublic"
+
+2.  **Polls are "Cheat Codes"**
+    *   Polls get high engagement with low friction.
+    *   *Example:* "Tabs or Spaces? (Wrong answers only)" (Classic dev bait).
+    *   *Example:* "What's worse? 1. 500 false positives 2. 1 missed zero-day"
+
+3.  **Controversial (Safe) Takes**
+    *   "Legacy SAST is dead."
+    *   "Regex is not security."
+    *   "You don't need 100% test coverage."
+    *   *Why:* People will argue. Arguments = Replies. Replies = Algorithmic boost.
+
+---
+
+## 9. Key Metrics to Track
 
 ### A. Growth Metrics
 
@@ -481,7 +545,7 @@ Weekend poll: How often do you scan your personal/side projects for vulnerabilit
 
 ---
 
-## 9. Immediate Next Steps (Priority Order)
+## 10. Immediate Next Steps (Priority Order)
 
 ### 🔴 Critical (This Week)
 
@@ -506,7 +570,7 @@ Weekend poll: How often do you scan your personal/side projects for vulnerabilit
 
 ---
 
-## 10. Differentiation Strategy
+## 11. Differentiation Strategy
 
 ### What Makes Precogs AI Unique (Messaging)
 
@@ -526,7 +590,7 @@ Weekend poll: How often do you scan your personal/side projects for vulnerabilit
 
 ---
 
-## 11. Competitive Response Playbook
+## 12. Competitive Response Playbook
 
 ### When Competitors Post About...
 
@@ -539,7 +603,7 @@ Weekend poll: How often do you scan your personal/side projects for vulnerabilit
 
 ---
 
-## 12. Budget Recommendations (Optional)
+## 13. Budget Recommendations (Optional)
 
 | Initiative | Monthly Budget | Expected ROI |
 | :--- | :---: | :--- |
