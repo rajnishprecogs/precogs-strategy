@@ -1,21 +1,33 @@
 {
     "version": 2,
-    "public": true,
-    "cleanUrls": true,
-    "trailingSlash": false,
-    "rewrites": [
+    "routes": [
         {
-            "source": "/api/(.*)",
-            "destination": "/api/$1"
+            "src": "/api/(.*)",
+            "dest": "/api/$1"
         },
         {
-            "source": "/(.*)",
-            "destination": "/docs/$1"
+            "src": "/SocialMedia/(.*)",
+            "dest": "/docs/SocialMedia/$1"
+        },
+        {
+            "src": "/Blog/(.*)",
+            "dest": "/docs/Blog/$1"
+        },
+        {
+            "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2))",
+            "dest": "/docs/$1"
+        },
+        {
+            "src": "/",
+            "dest": "/docs/index.html"
+        },
+        {
+            "src": "/(.*)\\.html",
+            "dest": "/docs/$1.html"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/docs/$1"
         }
-    ],
-    "functions": {
-        "api/*.js": {
-            "runtime": "@vercel/node@3"
-        }
-    }
+    ]
 }
