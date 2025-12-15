@@ -589,6 +589,7 @@
             <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-calendar')">📅 Content Calendar</button>
             <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-growth')">🚀 Growth Playbook</button>
             <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-blog')">✍️ Blog Engine</button>
+            <button class="sub-tab-btn" onclick="switchSubTab(event, 'sm-team')">🏆 Team Leaderboard</button>
         </div>
 
         <!-- Tab: Analytics Dashboard -->
@@ -602,6 +603,8 @@
                 <div style="display: flex; gap: 12px;">
                     <button class="refresh-btn" onclick="refreshData()">🔄 Refresh Data</button>
                     <button class="cta-btn" onclick="saveAllAnalytics()">💾 Save Changes</button>
+                    <button class="refresh-btn" onclick="resetAnalytics()"
+                        style="background: #fee2e2; color: #991b1b;">🗑️ Reset</button>
                 </div>
             </div>
 
@@ -1514,6 +1517,140 @@
             </div>
         </div>
 
+        <!-- Tab: Team Leaderboard -->
+        <div id="sm-team" class="sub-tab-content">
+            <h2>🏆 Team Leaderboard</h2>
+            <p>Track task assignments, completions, and team performance. Gamified with XP, badges, and rankings!</p>
+
+            <!-- Stats Overview -->
+            <div class="card highlight-card" style="margin-bottom: 24px;">
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center;">
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent-primary);" id="totalTasks">
+                            0</div>
+                        <div style="color: var(--text-muted);">Total Tasks</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;" id="completedTasks">0</div>
+                        <div style="color: var(--text-muted);">Completed</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #f59e0b;" id="pendingTasks">0</div>
+                        <div style="color: var(--text-muted);">Pending</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #3b82f6;" id="completionRate">0%</div>
+                        <div style="color: var(--text-muted);">Completion Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard -->
+            <div class="card" style="margin-bottom: 24px;">
+                <h3 style="margin-top: 0;">🥇 Leaderboard Rankings</h3>
+                <div class="table-container">
+                    <table class="data-table" id="leaderboardTable">
+                        <thead>
+                            <tr>
+                                <th width="60">Rank</th>
+                                <th>Team Member</th>
+                                <th width="100">Assigned</th>
+                                <th width="100">Completed</th>
+                                <th width="100">XP Points</th>
+                                <th width="120">Badges</th>
+                                <th width="100">Streak 🔥</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Badge Legend -->
+            <div class="card" style="margin-bottom: 24px;">
+                <h3 style="margin-top: 0;">🎖️ Badge Guide</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                    <div
+                        style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-light); border-radius: 8px;">
+                        <span style="font-size: 1.5rem;">🚀</span>
+                        <div>
+                            <strong>Starter</strong>
+                            <div style="font-size: 0.85rem; color: var(--text-muted);">Complete 1 task</div>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-light); border-radius: 8px;">
+                        <span style="font-size: 1.5rem;">⚡</span>
+                        <div>
+                            <strong>Hustler</strong>
+                            <div style="font-size: 0.85rem; color: var(--text-muted);">Complete 5 tasks</div>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-light); border-radius: 8px;">
+                        <span style="font-size: 1.5rem;">🔥</span>
+                        <div>
+                            <strong>On Fire</strong>
+                            <div style="font-size: 0.85rem; color: var(--text-muted);">Complete 10 tasks</div>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-light); border-radius: 8px;">
+                        <span style="font-size: 1.5rem;">👑</span>
+                        <div>
+                            <strong>Champion</strong>
+                            <div style="font-size: 0.85rem; color: var(--text-muted);">Complete 20 tasks</div>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-light); border-radius: 8px;">
+                        <span style="font-size: 1.5rem;">🎯</span>
+                        <div>
+                            <strong>Sharpshooter</strong>
+                            <div style="font-size: 0.85rem; color: var(--text-muted);">100% completion rate</div>
+                        </div>
+                    </div>
+                    <div
+                        style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-light); border-radius: 8px;">
+                        <span style="font-size: 1.5rem;">📱</span>
+                        <div>
+                            <strong>Social Pro</strong>
+                            <div style="font-size: 0.85rem; color: var(--text-muted);">Complete 5 Growth tasks</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Individual Stats -->
+            <div class="card">
+                <h3 style="margin-top: 0;">📊 Detailed Task Breakdown</h3>
+                <div class="table-container">
+                    <table class="data-table" id="detailedStatsTable">
+                        <thead>
+                            <tr>
+                                <th>Team Member</th>
+                                <th>Growth Tasks</th>
+                                <th>Post Tasks</th>
+                                <th>Video Tasks</th>
+                                <th>Total Assigned</th>
+                                <th>Completed</th>
+                                <th>Completion %</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailedStatsBody">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <button class="refresh-btn" onclick="refreshLeaderboard()" style="margin-top: 16px;">
+                    🔄 Refresh Leaderboard
+                </button>
+            </div>
+        </div>
+
     </div>
 
     <footer class="site-footer">
@@ -1541,6 +1678,7 @@
             initAnalytics();
             loadTasks();
             loadCustomTasks();
+            initLeaderboard();
         });
 
         // --- TAB SWITCHING ---
@@ -1550,6 +1688,7 @@
             document.querySelectorAll('.sub-tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
             if (tabId === 'sm-analytics') renderChart();
+            if (tabId === 'sm-team') refreshLeaderboard();
         }
 
         // --- ANALYTICS ENGINE ---
@@ -1865,6 +2004,156 @@
                 }
             });
             loadTasks();
+        }
+
+        // --- LEADERBOARD ENGINE ---
+        function initLeaderboard() {
+            refreshLeaderboard();
+        }
+
+        function refreshLeaderboard() {
+            // Gather all task data from the calendar
+            const taskData = {};
+            const completedData = {};
+
+            // Initialize all assignees
+            ASSIGNEES.forEach(name => {
+                if (name !== 'Unassigned') {
+                    taskData[name] = { total: 0, growth: 0, post: 0, video: 0, linkedin: 0 };
+                    completedData[name] = 0;
+                }
+            });
+
+            // Count assigned tasks
+            document.querySelectorAll('.assignee-select').forEach(select => {
+                const assignee = select.value;
+                if (assignee && assignee !== 'Unassigned' && taskData[assignee]) {
+                    taskData[assignee].total++;
+
+                    // Determine task type from the row
+                    const row = select.closest('tr');
+                    if (row) {
+                        const typeCell = row.querySelector('.tag-growth');
+                        const postCell = row.querySelector('.tag-post');
+                        const videoCell = row.querySelector('.tag-video');
+
+                        if (typeCell) taskData[assignee].growth++;
+                        else if (videoCell) taskData[assignee].video++;
+                        else if (postCell) taskData[assignee].post++;
+                    }
+                }
+            });
+
+            // Count completed tasks
+            document.querySelectorAll('.task-checkbox:checked').forEach(checkbox => {
+                const row = checkbox.closest('tr');
+                if (row) {
+                    const select = row.querySelector('.assignee-select');
+                    if (select && select.value && select.value !== 'Unassigned') {
+                        completedData[select.value] = (completedData[select.value] || 0) + 1;
+                    }
+                }
+            });
+
+            // Calculate totals
+            let totalTasks = 0;
+            let totalCompleted = 0;
+
+            Object.values(taskData).forEach(d => totalTasks += d.total);
+            Object.values(completedData).forEach(c => totalCompleted += c);
+
+            // Update overview stats
+            document.getElementById('totalTasks').textContent = totalTasks;
+            document.getElementById('completedTasks').textContent = totalCompleted;
+            document.getElementById('pendingTasks').textContent = totalTasks - totalCompleted;
+            document.getElementById('completionRate').textContent =
+                totalTasks > 0 ? Math.round((totalCompleted / totalTasks) * 100) + '%' : '0%';
+
+            // Build leaderboard
+            const leaderboard = ASSIGNEES
+                .filter(name => name !== 'Unassigned')
+                .map(name => {
+                    const assigned = taskData[name]?.total || 0;
+                    const completed = completedData[name] || 0;
+                    const xp = completed * 100 + assigned * 10; // 100 XP per completed, 10 per assigned
+                    const streak = Math.min(completed, 7); // Max 7 day streak simulation
+
+                    return {
+                        name,
+                        assigned,
+                        completed,
+                        xp,
+                        streak,
+                        badges: getBadges(completed, assigned, taskData[name]?.growth || 0),
+                        growth: taskData[name]?.growth || 0,
+                        post: taskData[name]?.post || 0,
+                        video: taskData[name]?.video || 0
+                    };
+                })
+                .sort((a, b) => b.xp - a.xp);
+
+            // Render leaderboard table
+            const leaderboardBody = document.getElementById('leaderboardBody');
+            leaderboardBody.innerHTML = '';
+
+            leaderboard.forEach((user, idx) => {
+                const rankEmoji = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : `${idx + 1}`;
+                const row = document.createElement('tr');
+                row.style.background = idx < 3 ? 'rgba(139, 92, 246, 0.05)' : '';
+                row.innerHTML = `
+                    <td style="font-size: 1.3rem; text-align: center;">${rankEmoji}</td>
+                    <td><strong>${user.name}</strong></td>
+                    <td style="text-align: center;">${user.assigned}</td>
+                    <td style="text-align: center; color: #10b981; font-weight: 600;">${user.completed}</td>
+                    <td style="text-align: center; color: var(--accent-primary); font-weight: 700;">${user.xp} XP</td>
+                    <td>${user.badges}</td>
+                    <td style="text-align: center;">${user.streak > 0 ? user.streak + ' 🔥' : '-'}</td>
+                `;
+                leaderboardBody.appendChild(row);
+            });
+
+            // Render detailed stats
+            const detailedBody = document.getElementById('detailedStatsBody');
+            detailedBody.innerHTML = '';
+
+            leaderboard.forEach(user => {
+                const completionPct = user.assigned > 0 ? Math.round((user.completed / user.assigned) * 100) : 0;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><strong>${user.name}</strong></td>
+                    <td style="text-align: center;">${user.growth}</td>
+                    <td style="text-align: center;">${user.post}</td>
+                    <td style="text-align: center;">${user.video}</td>
+                    <td style="text-align: center;">${user.assigned}</td>
+                    <td style="text-align: center; color: #10b981;">${user.completed}</td>
+                    <td style="text-align: center;">
+                        <span style="padding: 4px 8px; border-radius: 4px; background: ${completionPct >= 80 ? '#dcfce7' : completionPct >= 50 ? '#fef9c3' : '#fee2e2'
+                    }; color: ${completionPct >= 80 ? '#166534' : completionPct >= 50 ? '#854d0e' : '#991b1b'
+                    };">${completionPct}%</span>
+                    </td>
+                `;
+                detailedBody.appendChild(row);
+            });
+        }
+
+        function getBadges(completed, assigned, growthTasks) {
+            const badges = [];
+            if (completed >= 1) badges.push('🚀');
+            if (completed >= 5) badges.push('⚡');
+            if (completed >= 10) badges.push('🔥');
+            if (completed >= 20) badges.push('👑');
+            if (assigned > 0 && completed === assigned) badges.push('🎯');
+            if (growthTasks >= 5) badges.push('📱');
+            return badges.length > 0 ? badges.join(' ') : '-';
+        }
+
+        // Reset analytics to initial data
+        function resetAnalytics() {
+            if (confirm('Reset all analytics data to initial values?')) {
+                localStorage.removeItem('precogs_analytics_history');
+                initAnalytics();
+                alert('✅ Analytics reset to initial data!');
+            }
         }
     </script>
 
