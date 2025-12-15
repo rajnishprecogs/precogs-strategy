@@ -692,6 +692,99 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Competitor Activity Section -->
+            <div class="card" style="margin-top: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h3 style="margin: 0;">📢 Competitor Posting Activity</h3>
+                    <button class="refresh-btn" onclick="fetchCompetitorActivity()" id="activityRefreshBtn">🔄 Fetch
+                        Live Activity</button>
+                </div>
+
+                <!-- Posting Frequency Benchmarks -->
+                <div style="margin-bottom: 24px;">
+                    <h4 style="margin-bottom: 12px;">📊 Posting Frequency Benchmarks (Posts/Week)</h4>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Competitor</th>
+                                    <th>X (Twitter)</th>
+                                    <th>LinkedIn</th>
+                                    <th>Content Style</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(139, 92, 246, 0.1);">
+                                    <td><strong>Precogs AI</strong> 🔮</td>
+                                    <td>7 (1/day)</td>
+                                    <td>3</td>
+                                    <td>AI Demos, Technical Tips</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Snyk</strong></td>
+                                    <td>21 (3/day)</td>
+                                    <td>5</td>
+                                    <td>Memes, DevRel, Reports</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CodeRabbit</strong></td>
+                                    <td>14 (2/day)</td>
+                                    <td>3</td>
+                                    <td>AI Demos, PR Reviews</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Aikido</strong></td>
+                                    <td>10</td>
+                                    <td>4</td>
+                                    <td>Real Talk, Transparency</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Checkmarx</strong></td>
+                                    <td>15</td>
+                                    <td>5</td>
+                                    <td>Enterprise, Gartner Reports</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Veracode</strong></td>
+                                    <td>12</td>
+                                    <td>4</td>
+                                    <td>Security Reports, Webinars</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Semgrep</strong></td>
+                                    <td>8</td>
+                                    <td>2</td>
+                                    <td>Technical, Open Source</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SonarQube</strong></td>
+                                    <td>10</td>
+                                    <td>3</td>
+                                    <td>Code Quality, Clean Code</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p
+                        style="margin-top: 12px; padding: 12px; background: #f0fdf4; border-radius: 8px; color: #166534;">
+                        <strong>💡 Recommendation:</strong> Post 2-3x daily on X, 3-5x weekly on LinkedIn. Focus on
+                        quality over quantity. Best times: Tue-Thu 9-11 AM.
+                    </p>
+                </div>
+
+                <!-- Recent Competitor Posts -->
+                <div>
+                    <h4 style="margin-bottom: 12px;">🐦 Recent Competitor Posts (Live)</h4>
+                    <div id="competitorTweets" style="display: grid; gap: 16px;">
+                        <p
+                            style="color: var(--text-muted); padding: 20px; text-align: center; background: var(--bg-light); border-radius: 8px;">
+                            Click "🔄 Fetch Live Activity" to load recent competitor tweets from Twitter API.
+                            <br><small>(Requires TWITTER_BEARER_TOKEN configured in Vercel)</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -2153,6 +2246,88 @@
                 localStorage.removeItem('precogs_analytics_history');
                 initAnalytics();
                 alert('✅ Analytics reset to initial data!');
+            }
+        }
+
+        // Fetch competitor activity from Twitter API
+        async function fetchCompetitorActivity() {
+            const btn = document.getElementById('activityRefreshBtn');
+            const container = document.getElementById('competitorTweets');
+            const originalText = btn.innerText;
+
+            btn.innerText = '⏳ Fetching tweets...';
+            btn.disabled = true;
+
+            try {
+                const API_URL = window.location.hostname === 'localhost'
+                    ? 'http://localhost:3000/api/twitter-stats'
+                    : '/api/twitter-stats';
+
+                const response = await fetch(API_URL);
+
+                if (!response.ok) {
+                    throw new Error(`API returned ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.success && result.data) {
+                    container.innerHTML = '';
+
+                    // Display recent tweets from each competitor
+                    result.data.forEach(competitor => {
+                        if (competitor.recentTweets && competitor.recentTweets.length > 0) {
+                            const competitorSection = document.createElement('div');
+                            competitorSection.style.cssText = 'background: var(--bg-light); border-radius: 12px; padding: 16px; margin-bottom: 16px;';
+
+                            competitorSection.innerHTML = `
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                    <strong style="color: var(--accent-primary);">${competitor.name}</strong>
+                                    <span style="color: var(--text-muted); font-size: 0.85rem;">${competitor.handle}</span>
+                                    <span style="background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">${competitor.followers?.toLocaleString() || 0} followers</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 8px;">
+                                    ${competitor.recentTweets.slice(0, 3).map(tweet => `
+                                        <a href="${tweet.url}" target="_blank" style="text-decoration: none; display: block; background: white; padding: 12px; border-radius: 8px; border: 1px solid var(--border-light); transition: all 0.2s;">
+                                            <p style="margin: 0 0 8px 0; color: var(--text-dark); font-size: 0.9rem; line-height: 1.5;">${tweet.text.substring(0, 200)}${tweet.text.length > 200 ? '...' : ''}</p>
+                                            <div style="display: flex; gap: 16px; color: var(--text-muted); font-size: 0.8rem;">
+                                                <span>❤️ ${tweet.likes}</span>
+                                                <span>🔁 ${tweet.retweets}</span>
+                                                <span>💬 ${tweet.replies}</span>
+                                                <span style="margin-left: auto;">${new Date(tweet.createdAt).toLocaleDateString()}</span>
+                                            </div>
+                                        </a>
+                                    `).join('')}
+                                </div>
+                            `;
+
+                            container.appendChild(competitorSection);
+                        }
+                    });
+
+                    if (container.innerHTML === '') {
+                        container.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 20px;">No recent tweets found.</p>';
+                    }
+
+                    btn.innerText = '✅ Loaded!';
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                    }, 2000);
+                } else {
+                    throw new Error('No data returned');
+                }
+            } catch (error) {
+                console.error('Failed to fetch competitor activity:', error);
+                container.innerHTML = `
+                    <div style="padding: 20px; background: #fee2e2; border-radius: 8px; color: #991b1b; text-align: center;">
+                        <p><strong>⚠️ Could not fetch live tweets</strong></p>
+                        <p style="font-size: 0.85rem;">Make sure TWITTER_BEARER_TOKEN is configured in Vercel environment variables.</p>
+                        <p style="font-size: 0.75rem; color: #7f1d1d;">Error: ${error.message}</p>
+                    </div>
+                `;
+                btn.innerText = originalText;
+                btn.disabled = false;
             }
         }
     </script>
