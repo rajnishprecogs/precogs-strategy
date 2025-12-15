@@ -29,6 +29,39 @@
             --shadow-glow: 0 8px 40px rgba(139, 92, 246, 0.15);
         }
 
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --bg-light: #0f172a;
+            --bg-white: #1e293b;
+            --bg-glass: rgba(30, 41, 59, 0.9);
+            --text-dark: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #64748b;
+            --border-light: rgba(255, 255, 255, 0.1);
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Dark mode toggle button */
+        .theme-toggle {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--accent-glow);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -571,6 +604,8 @@
             <nav class="header-nav">
                 <a href="../index.html">Docs</a>
                 <a href="../Blog/sql-injection.html">Blog</a>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode"
+                    id="themeToggle">🌙</button>
                 <a href="https://precogs.ai" target="_blank" class="cta-btn">Try Free Scan →</a>
             </nav>
         </div>
@@ -1767,12 +1802,36 @@
 
         // --- INIT ---
         document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
             initAssignees();
             initAnalytics();
             loadTasks();
             loadCustomTasks();
             initLeaderboard();
         });
+
+        // --- THEME TOGGLE ---
+        function initTheme() {
+            const savedTheme = localStorage.getItem('precogs_theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('precogs_theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const btn = document.getElementById('themeToggle');
+            if (btn) {
+                btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+                btn.title = theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+            }
+        }
 
         // --- TAB SWITCHING ---
         function switchSubTab(event, tabId) {
