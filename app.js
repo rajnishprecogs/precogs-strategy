@@ -20,8 +20,16 @@ function initNavigation() {
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
+            const href = link.getAttribute('href');
             const sectionId = link.getAttribute('data-section');
+
+            // If link points to an external HTML file, allow normal navigation
+            if (href && (href.endsWith('.html') || href.startsWith('http'))) {
+                // Don't prevent default - let the browser navigate
+                return;
+            }
+
+            e.preventDefault();
 
             // Update active states
             navLinks.forEach(l => l.classList.remove('active'));
