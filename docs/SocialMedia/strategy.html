@@ -1326,6 +1326,11 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td><strong>Automotive Leaders</strong></td>
+                                <td>@_mph4 (GM CISO), @kentindell, @alissaknight</td>
+                                <td>Focus on binary analysis & ISO 21434 compliance</td>
+                            </tr>
+                            <tr>
                                 <td><strong>Security Thought Leaders</strong></td>
                                 <td>@troyhunt, @GossiTheDog, @SwiftOnSecurity</td>
                                 <td>"Yes, and..." agreement + your insight</td>
@@ -1337,17 +1342,26 @@
                             </tr>
                             <tr>
                                 <td><strong>Competitors</strong></td>
-                                <td>@snyksec, @AikidoSec, @semaborge</td>
+                                <td>@snyksec, @AikidoSec, @UpstreamAuto</td>
                                 <td>Don't attack. Reply to their community's complaints.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tech Media</strong></td>
-                                <td>@hackernews, @TechCrunch, @aaborabbiturity</strong></td>
-                                <td>Be first with analysis on breaking news</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            <!-- Automotive Special Focus -->
+            <div class="card"
+                style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1)); border: 1px solid var(--border-accent);">
+                <h3 style="color: var(--neon-blue);">🚗 Automotive Strategy focus</h3>
+                <p>Key growth tactics for the Software-Defined Vehicle (SDV) market.</p>
+                <ul style="margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <li>🔹 <strong>Binary Analysis:</strong> Highlight ECU firmware scanning without source code.</li>
+                    <li>🔹 <strong>ISO 21434:</strong> Position as the automation tool for automotive compliance.</li>
+                    <li>🔹 <strong>Michael Hanley:</strong> Engage with GM's CISO (former GitHub CTO) on GitHub
+                        integrations.</li>
+                    <li>🔹 <strong>Tear-downs:</strong> Case studies on connected car security research.</li>
+                </ul>
             </div>
 
             <!-- Content Strategy -->
@@ -1821,6 +1835,11 @@
 
         // --- INIT ---
         document.addEventListener('DOMContentLoaded', () => {
+            // Force light theme for this update as requested by user
+            if (!localStorage.getItem('precogs_theme_v2_reset')) {
+                localStorage.setItem('precogs_theme', 'light');
+                localStorage.setItem('precogs_theme_v2_reset', 'true');
+            }
             initTheme();
             initAssignees();
             initAnalytics();
@@ -2174,11 +2193,11 @@
                     completed: row.querySelector('.task-checkbox').checked
                 });
             });
-            localStorage.setItem('precogs_custom_tasks_v2', JSON.stringify(customTasks));
+            localStorage.setItem('precogs_custom_tasks_v3', JSON.stringify(customTasks));
         }
 
         function loadCustomTasks() {
-            const tasks = JSON.parse(localStorage.getItem('precogs_custom_tasks_v2') || '[]');
+            const tasks = JSON.parse(localStorage.getItem('precogs_custom_tasks_v3') || '[]');
             tasks.forEach(task => {
                 const table = document.getElementById(task.parentId);
                 if (table) {
