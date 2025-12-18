@@ -11,35 +11,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-light: #fafbfc;
-            --bg-white: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-white: rgba(255, 255, 255, 0.85);
+            /* Glass base */
             --bg-glass: rgba(255, 255, 255, 0.7);
             --text-dark: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #94a3b8;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
             --accent-primary: #8b5cf6;
             --accent-secondary: #a855f7;
-            --gradient-primary: linear-gradient(135deg, #8b5cf6, #a855f7, #d946ef);
-            --accent-glow: 0 0 30px rgba(139, 92, 246, 0.3);
-            --accent-glow-strong: 0 0 40px rgba(139, 92, 246, 0.5);
-            --border-light: rgba(0, 0, 0, 0.06);
-            --border-accent: rgba(139, 92, 246, 0.2);
-            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
-            --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.08);
-            --shadow-glow: 0 8px 40px rgba(139, 92, 246, 0.15);
+            --gradient-primary: linear-gradient(135deg, #8b5cf6, #a855f7, #6366f1);
+            --gradient-neon: linear-gradient(135deg, #8b5cf6, #a855f7, #06b6d4);
+            --accent-glow: 0 0 20px rgba(139, 92, 246, 0.2);
+            --accent-glow-strong: 0 0 40px rgba(139, 92, 246, 0.4);
+            --neon-blue: #06b6d4;
+            --neon-purple: #8b5cf6;
+            --border-light: rgba(139, 92, 246, 0.1);
+            --border-accent: rgba(139, 92, 246, 0.3);
+            --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+            --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.15);
+            --glass-blur: blur(12px);
         }
 
         /* Dark Mode Variables */
         [data-theme="dark"] {
-            --bg-light: #0f172a;
-            --bg-white: #1e293b;
-            --bg-glass: rgba(30, 41, 59, 0.9);
-            --text-dark: #f1f5f9;
-            --text-secondary: #cbd5e1;
+            --bg-light: #020617;
+            --bg-white: rgba(15, 23, 42, 0.8);
+            --bg-glass: rgba(15, 23, 42, 0.85);
+            --text-dark: #f8fafc;
+            --text-secondary: #94a3b8;
             --text-muted: #64748b;
-            --border-light: rgba(255, 255, 255, 0.1);
-            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
-            --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.4);
+            --border-light: rgba(255, 255, 255, 0.05);
+            --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
         }
 
         /* Dark mode toggle button */
@@ -54,7 +59,8 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: var(--glass-blur);
         }
 
         .theme-toggle:hover {
@@ -150,30 +156,35 @@
         }
 
         .page-title {
-            font-size: 2.75rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: var(--gradient-neon);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
         }
 
         .page-meta {
-            color: var(--text-muted);
-            font-size: 1rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.8;
         }
 
         .sub-tabs {
             display: flex;
-            gap: 8px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 40px;
             background: var(--bg-white);
-            padding: 6px;
-            border-radius: 14px;
+            padding: 8px;
+            border-radius: 20px;
             border: 1px solid var(--border-light);
             box-shadow: var(--shadow-soft);
             overflow-x: auto;
+            backdrop-filter: var(--glass-blur);
         }
 
         .sub-tab-btn {
@@ -248,15 +259,23 @@
         .card {
             background: var(--bg-white);
             border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 20px;
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 24px;
             box-shadow: var(--shadow-soft);
+            backdrop-filter: var(--glass-blur);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            border-color: var(--border-accent);
+            box-shadow: var(--shadow-card);
         }
 
         .highlight-card {
-            border-left: 4px solid var(--accent-primary);
+            border: 1px solid var(--border-accent);
             box-shadow: var(--shadow-glow);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(6, 182, 212, 0.05));
         }
 
         .feature-grid {
@@ -496,8 +515,8 @@
         }
 
         .popular-tweet {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
             border-radius: 12px;
             padding: 16px;
             margin: 12px 0;
@@ -1307,6 +1326,11 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td><strong>Automotive Leaders</strong></td>
+                                <td>@_mph4 (GM CISO), @kentindell, @alissaknight</td>
+                                <td>Focus on binary analysis & ISO 21434 compliance</td>
+                            </tr>
+                            <tr>
                                 <td><strong>Security Thought Leaders</strong></td>
                                 <td>@troyhunt, @GossiTheDog, @SwiftOnSecurity</td>
                                 <td>"Yes, and..." agreement + your insight</td>
@@ -1318,17 +1342,26 @@
                             </tr>
                             <tr>
                                 <td><strong>Competitors</strong></td>
-                                <td>@snyksec, @AikidoSec, @semaborge</td>
+                                <td>@snyksec, @AikidoSec, @UpstreamAuto</td>
                                 <td>Don't attack. Reply to their community's complaints.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tech Media</strong></td>
-                                <td>@hackernews, @TechCrunch, @aaborabbiturity</strong></td>
-                                <td>Be first with analysis on breaking news</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            <!-- Automotive Special Focus -->
+            <div class="card"
+                style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1)); border: 1px solid var(--border-accent);">
+                <h3 style="color: var(--neon-blue);">🚗 Automotive Strategy focus</h3>
+                <p>Key growth tactics for the Software-Defined Vehicle (SDV) market.</p>
+                <ul style="margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <li>🔹 <strong>Binary Analysis:</strong> Highlight ECU firmware scanning without source code.</li>
+                    <li>🔹 <strong>ISO 21434:</strong> Position as the automation tool for automotive compliance.</li>
+                    <li>🔹 <strong>Michael Hanley:</strong> Engage with GM's CISO (former GitHub CTO) on GitHub
+                        integrations.</li>
+                    <li>🔹 <strong>Tear-downs:</strong> Case studies on connected car security research.</li>
+                </ul>
             </div>
 
             <!-- Content Strategy -->
@@ -1802,6 +1835,11 @@
 
         // --- INIT ---
         document.addEventListener('DOMContentLoaded', () => {
+            // Force light theme for this update as requested by user
+            if (!localStorage.getItem('precogs_theme_v2_reset')) {
+                localStorage.setItem('precogs_theme', 'light');
+                localStorage.setItem('precogs_theme_v2_reset', 'true');
+            }
             initTheme();
             initAssignees();
             initAnalytics();
@@ -2109,14 +2147,27 @@
             newRow.innerHTML = `
                 <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('${taskId}')"></td>
                 <td contenteditable="true" onblur="saveCustomTasks()">12:00 PM</td>
-                <td contenteditable="true" onblur="saveCustomTasks()">Task</td>
+                <td>
+                    <select class="assignee-select" style="width: auto; padding: 4px;" onchange="saveCustomTasks()">
+                        <option value="𝕏">𝕏 X</option>
+                        <option value="in">in LinkedIn</option>
+                        <option value="▶️">▶️ YT</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="assignee-select" style="width: auto; padding: 4px;" onchange="saveCustomTasks()">
+                        <option value="Growth">Growth</option>
+                        <option value="Post">Post</option>
+                        <option value="Video">Video</option>
+                    </select>
+                </td>
                 <td contenteditable="true" onblur="saveCustomTasks()">New Custom Task</td>
                 <td><select class="assignee-select custom-assign" id="assign-${taskId}" onchange="saveCustomTasks()"></select></td>
             `;
 
             table.appendChild(newRow);
 
-            const select = newRow.querySelector('select');
+            const select = newRow.querySelector('.custom-assign');
             ASSIGNEES.forEach(name => {
                 const opt = document.createElement('option');
                 opt.value = name;
@@ -2130,32 +2181,65 @@
         function saveCustomTasks() {
             const customTasks = [];
             document.querySelectorAll('tr[id^="custom-"]').forEach(row => {
+                const selects = row.querySelectorAll('select');
                 customTasks.push({
                     id: row.id,
                     parentId: row.closest('table').id,
-                    html: row.innerHTML,
-                    assignee: row.querySelector('select').value
+                    time: row.cells[1].innerText,
+                    platform: selects[0].value,
+                    type: selects[1].value,
+                    content: row.cells[4].innerText,
+                    assignee: row.querySelector('.custom-assign').value,
+                    completed: row.querySelector('.task-checkbox').checked
                 });
             });
-            localStorage.setItem('precogs_custom_tasks', JSON.stringify(customTasks));
+            localStorage.setItem('precogs_custom_tasks_v3', JSON.stringify(customTasks));
         }
 
         function loadCustomTasks() {
-            const tasks = JSON.parse(localStorage.getItem('precogs_custom_tasks') || '[]');
+            const tasks = JSON.parse(localStorage.getItem('precogs_custom_tasks_v3') || '[]');
             tasks.forEach(task => {
                 const table = document.getElementById(task.parentId);
                 if (table) {
+                    const tableBody = table.querySelector('tbody');
                     const newRow = document.createElement('tr');
                     newRow.id = task.id;
-                    newRow.innerHTML = task.html;
-                    table.querySelector('tbody').appendChild(newRow);
-                    const select = newRow.querySelector('select');
-                    select.value = task.assignee;
-                    select.onchange = saveCustomTasks;
-                    newRow.querySelectorAll('[contenteditable]').forEach(el => el.onblur = saveCustomTasks);
+                    newRow.className = task.completed ? 'completed-row' : '';
+
+                    newRow.innerHTML = `
+                        <td><input type="checkbox" class="task-checkbox" onchange="toggleTask('${task.id}')" ${task.completed ? 'checked' : ''}></td>
+                        <td contenteditable="true" onblur="saveCustomTasks()">${task.time}</td>
+                        <td>
+                            <select class="assignee-select" style="width: auto; padding: 4px;" onchange="saveCustomTasks()">
+                                <option value="𝕏" ${task.platform === '𝕏' ? 'selected' : ''}>𝕏 X</option>
+                                <option value="in" ${task.platform === 'in' ? 'selected' : ''}>in LinkedIn</option>
+                                <option value="▶️" ${task.platform === '▶️' ? 'selected' : ''}>▶️ YT</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="assignee-select" style="width: auto; padding: 4px;" onchange="saveCustomTasks()">
+                                <option value="Growth" ${task.type === 'Growth' ? 'selected' : ''}>Growth</option>
+                                <option value="Post" ${task.type === 'Post' ? 'selected' : ''}>Post</option>
+                                <option value="Video" ${task.type === 'Video' ? 'selected' : ''}>Video</option>
+                            </select>
+                        </td>
+                        <td contenteditable="true" onblur="saveCustomTasks()">${task.content}</td>
+                        <td><select class="assignee-select custom-assign" id="assign-${task.id}" onchange="saveCustomTasks()"></select></td>
+                    `;
+
+                    tableBody.appendChild(newRow);
+
+                    const select = newRow.querySelector('.custom-assign');
+                    ASSIGNEES.forEach(name => {
+                        const opt = document.createElement('option');
+                        opt.value = name;
+                        opt.textContent = name;
+                        if (name === task.assignee) opt.selected = true;
+                        select.appendChild(opt);
+                    });
                 }
             });
-            loadTasks();
+            loadTasks(); // Sync checkboxes for built-in tasks
         }
 
         // --- LEADERBOARD ENGINE ---
