@@ -599,6 +599,36 @@ Growth on X/LinkedIn doesn't happen by just posting. You must engage.
 
 ---
 
+---
+
+## 14. Automotive Industry Strategy (Special Focus)
+
+The automotive industry is in a critical transition toward "Software-Defined Vehicles" (SDV), making it a prime market for Precogs AI's binary SAST/DAST capabilities. Use the following strategy to engage this sector.
+
+### A. Key Focus Areas
+- **Binary Analysis for ECUs:** Most automotive components (ECUs) are provided as binary firmware without source. Emphasize Precogs AI's ability to scan binaries.
+- **ISO/SAE 21434 Compliance:** The standard for automotive cybersecurity. Position Precogs AI as the automation tool for 21434 evidence.
+- **Supply Chain (SBOM):** Crucial for managing the complex tiered supply chain of OEMs.
+
+### B. Curated Leader List for Engagement
+
+| Leader | Role | X (Twitter) Handle | Why Follow/Engage |
+| :--- | :--- | :---: | :--- |
+| **Michael Hanley** | CISO, General Motors | [@_mph4](https://x.com/_mph4) | Former GitHub CTO. Perfect match for our GitHub-first AI approach. |
+| **Ken Tindell** | CTO, Canis Labs | [@kentindell](https://x.com/kentindell) | Automotive security researcher & CAN bus expert. High influencer status. |
+| **Alissa Knight** | Principal Analyst | [@alissaknight](https://x.com/alissaknight) | Author of "Hacking Connected Cars". Major industry influencer. |
+| **Ian Tabor** | Security Consultant | [@_mint_](https://x.com/_mint_) | Car hacking expert, active in the community. |
+| **David Rogers** | CEO, Copper Horse | [@david_rogers](https://x.com/david_rogers) | Influential in automotive security standards. |
+| **Upstream Security** | Official Account | [@UpstreamAuto](https://x.com/UpstreamAuto) | Leading automotive threat intel company. High engagement potential. |
+| **Cybellum** | Official Account | [@Cybellum_](https://x.com/Cybellum_) | Direct competitor, but follow their followers and engage with people who mention them. |
+
+### C. Automotive-Specific Growth Tactics
+1. **The "Flash-to-Fix" Narrative:** Show how Precogs AI handles firmware binaries (Flash) and generates fix suggestions without needing the original C/C++ source code.
+2. **21434 Automation:** Create content around "Automating ISO 21434 Compliance with AI".
+3. **Engage with Michael Hanley:** Since he is the former CTO of GitHub and current CISO of GM, tag him in posts showing our Deep GitHub Integration.
+
+---
+
 ## Summary
 
 Precogs AI has a solid foundation with @precogs_ai on X (361 followers in ~1 month). The immediate priority is to **fix the post visibility issue** and establish a consistent posting rhythm. By following this strategy:
@@ -607,5 +637,6 @@ Precogs AI has a solid foundation with @precogs_ai on X (361 followers in ~1 mon
 2. **Posting Frequency:** 2-3x/day on X, 5x/week on LinkedIn
 3. **Content Mix:** 40% educational, 25% product, 15% news, 10% community, 10% culture
 4. **Differentiation:** Emphasize "pre-cognitive" AI security, Gemini-powered analysis, all-in-one platform
+5. **Special Focus:** Automotive industry targeting via binary analysis and ISO 21434 compliance.
 
 **Next Immediate Step:** Check @precogs_ai settings to resolve the "8 posts" vs "hasn't posted" discrepancy, then create a pinned tweet with a clear value proposition.

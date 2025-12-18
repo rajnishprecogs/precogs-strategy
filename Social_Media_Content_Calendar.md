@@ -253,6 +253,57 @@
 
 ---
 
+---
+
+## 🏎️ AUTOMOTIVE INDUSTRY CONTENT (New!)
+*Theme: Software-Defined Vehicles, ISO 21434, and Binary Firmware Security*
+
+### Automotive Post 1: The Binary Challenge
+**Platform:** X / LinkedIn  
+**Type:** Educational  
+**Content:**  
+"In the automotive world, you don't always have the source code. Most ECU firmware comes as binary. 🏎️💻
+
+How do you scan for vulnerabilities in a closed-box system? 
+
+Precogs AI performs deep binary analysis to find vulnerabilities in compiled code, ensuring ISO 21434 compliance even without source access. 🔮
+
+#AutomotiveCybersecurity #ISO21434 #BinarySAST"
+
+### Automotive Post 2: DAST for Connected Vehicles
+**Platform:** X / LinkedIn  
+**Type:** Product Demo  
+**Content:**  
+"Static analysis is only half the battle. Connected vehicles rely on complex APIs and cloud backends. 🔗📱
+
+That's where DAST (Dynamic Application Security Testing) comes in. Precogs AI's DAST module probes your vehicle's APIs in real-time to catch runtime vulnerabilities before they hit the road. 🛡️
+
+#DAST #ConnectedCars #AppSec"
+
+### Automotive Post 3: Engagement (Target: Michael Hanley)
+**Platform:** X  
+**Type:** Engagement  
+**Content:**  
+"Hey @_mph4 (Michael Hanley), curious about your take on scaling security for Software-Defined Vehicles! 🚗
+
+At Precogs AI, we're combining our deep GitHub integration with AI-powered binary analysis to help OEMs stay ahead of ISO 21434 requirements. Would love to show you how we're reducing noise for automotive security teams. 🔮✨
+
+#DevSecOps #AutomotiveSecurity #GM"
+
+### Automotive Post 4: The True Cost of a Recall
+**Platform:** LinkedIn  
+**Type:** Thought Leadership  
+**Content:**  
+"A software recall in the automotive industry costs millions. A cybersecurity breach? Even more. 📉
+
+Shifting left isn't enough when you're dealing with Tier 1 and Tier 2 suppliers. You need a way to verify the security of the binaries you receive.
+
+Precogs AI provides the 'Trust but Verify' layer for the automotive supply chain. 🏎️🛡️
+
+#SupplyChainSecurity #Automotive #CISO"
+
+---
+
 ## 🏷️ HASHTAG GUIDE
 
 ### Every Post (Pick 2-3)
