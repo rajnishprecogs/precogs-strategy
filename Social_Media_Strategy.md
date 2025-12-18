@@ -612,6 +612,8 @@ The automotive industry is in a critical transition toward "Software-Defined Veh
 
 ### B. Curated Leader List for Engagement
 
+#### 🚗 Automotive Security Leaders
+
 | Leader | Role | X (Twitter) Handle | Why Follow/Engage |
 | :--- | :--- | :---: | :--- |
 | **Michael Hanley** | CISO, General Motors | [@_mph4](https://x.com/_mph4) | Former GitHub CTO. Perfect match for our GitHub-first AI approach. |
@@ -622,10 +624,61 @@ The automotive industry is in a critical transition toward "Software-Defined Veh
 | **Upstream Security** | Official Account | [@UpstreamAuto](https://x.com/UpstreamAuto) | Leading automotive threat intel company. High engagement potential. |
 | **Cybellum** | Official Account | [@Cybellum_](https://x.com/Cybellum_) | Direct competitor, but follow their followers and engage with people who mention them. |
 
+#### 🔐 Security Thought Leaders
+
+| Leader | Role | X (Twitter) Handle | Why Follow/Engage |
+| :--- | :--- | :---: | :--- |
+| **Troy Hunt** | Founder, Have I Been Pwned | [@troyhunt](https://x.com/troyhunt) | Massive reach, trusted voice. Reply with supportive insights. |
+| **Kevin Beaumont** | Security Researcher | [@GossiTheDog](https://x.com/GossiTheDog) | Breaking security news. Be first to add context. |
+| **SwiftOnSecurity** | Security Educator | [@SwiftOnSecurity](https://x.com/SwiftOnSecurity) | Viral security content. Engage with witty, additive comments. |
+| **Brian Krebs** | Journalist, Krebs on Security | [@braborabsonsecurity](https://x.com/braborabsonsecurity) | Investigative security journalism. Share analysis on breaches. |
+| **Mikko Hypponen** | CRO, WithSecure | [@mikaborab](https://x.com/mikaborab) | Security legend. Visibility boost on his threads. |
+
+#### 👨‍💻 Developer Advocates & DevRel
+
+| Leader | Role | X (Twitter) Handle | Why Follow/Engage |
+| :--- | :--- | :---: | :--- |
+| **Scott Hanselman** | VP DevRel, Microsoft | [@shanselman](https://x.com/shanselman) | Massive dev audience. Add security angles to his content. |
+| **Kelsey Hightower** | Developer Advocate | [@kelseyhightower](https://x.com/kelseyhightower) | Cloud/K8s thought leader. Connect security to DevOps. |
+| **Cassidy Williams** | CTO, Contenda | [@cassidoo](https://x.com/cassidoo) | Dev community leader. Celebrate and add value. |
+
+#### 🏢 Competitor Accounts (Follow Their Followers)
+
+| Company | X (Twitter) Handle | Strategy |
+| :--- | :---: | :--- |
+| **Snyk** | [@snyksec](https://x.com/snyksec) | Don't attack. Reply to their community's complaints about false positives. |
+| **Aikido** | [@AikidoSec](https://x.com/AikidoSec) | Watch for feature gaps we can highlight. |
+| **Semgrep** | [@semaborep](https://x.com/semaborep) | Engage with users asking about speed/accuracy. |
+| **Veracode** | [@Veracode](https://x.com/Veracode) | Enterprise focus. Target their SMB-frustrated users. |
+
+#### 📰 Tech Media & News
+
+| Account | X (Twitter) Handle | Strategy |
+| :--- | :---: | :--- |
+| **Hacker News** | [@hackernews](https://x.com/hackernews) | Be first with analysis on trending security stories. |
+| **The Hacker News** | [@TheHackersNews](https://x.com/TheHackersNews) | React to CVE announcements quickly. |
+| **Dark Reading** | [@DarkReading](https://x.com/DarkReading) | Industry news. Add expert commentary. |
+
+#### 🛡️ DAST & Pentesting Leaders
+
+| Leader | Role | X (Twitter) Handle | Why Follow/Engage |
+| :--- | :--- | :---: | :--- |
+| **PortSwigger** | Burp Suite Creators | [@PortSwigger](https://x.com/PortSwigger) | DAST market leader. Engage on OWASP topics. |
+| **James Kettle** | Director of Research, PortSwigger | [@albinowax](https://x.com/albinowax) | Web security research. Brilliant threads on HTTP desync, cache poisoning. |
+| **OWASP** | Foundation | [@OWASP](https://x.com/OWASP) | Central hub for web security. Participate in Top 10 discussions. |
+| **Beau Bullock** | Security Researcher | [@daborautyblack](https://x.com/daborautyblack) | Cloud/API security. Engage on cloud DAST topics. |
+| **Shubs** | Bug Bounty Hunter | [@infosec_au](https://x.com/infosec_au) | Active in bug bounty community. Great for DAST engagement. |
+
 ### C. Automotive-Specific Growth Tactics
 1. **The "Flash-to-Fix" Narrative:** Show how Precogs AI handles firmware binaries (Flash) and generates fix suggestions without needing the original C/C++ source code.
 2. **21434 Automation:** Create content around "Automating ISO 21434 Compliance with AI".
 3. **Engage with Michael Hanley:** Since he is the former CTO of GitHub and current CISO of GM, tag him in posts showing our Deep GitHub Integration.
+
+### D. DAST-Specific Growth Tactics
+1. **"SAST + DAST = Full Coverage" Narrative:** Position Precogs AI as the unified solution that combines static and dynamic analysis.
+2. **OWASP Top 10 Content:** Create threads explaining each vulnerability with AI-powered remediation examples.
+3. **PortSwigger Engagement:** Reply thoughtfully to @albinowax research threads, adding AI detection perspectives.
+4. **API Security Focus:** Highlight runtime API vulnerability detection capabilities.
 
 ---
 
